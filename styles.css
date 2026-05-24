@@ -834,14 +834,12 @@ body.is-opening main {
 
 @media (max-width: 760px) {
   html {
-    scroll-snap-type: y proximity;
+    scroll-snap-type: none;
   }
 
   .home {
     min-height: 100svh;
     padding: 30px 24px;
-    scroll-snap-align: start;
-    scroll-snap-stop: normal;
   }
 
   .home-nav {
@@ -1028,8 +1026,6 @@ body.is-opening main {
   .reservations,
   .contact {
     width: min(100% - 44px, 520px);
-    scroll-snap-align: start;
-    scroll-snap-stop: normal;
   }
 
   .story {
