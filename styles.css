@@ -868,14 +868,14 @@ body.is-opening main {
 
   .opening-loader {
     top: 20svh;
-    gap: 16px;
-    font-size: 0.72rem;
-    letter-spacing: 0.62em;
-    padding-left: 0.62em;
+    gap: 17px;
+    font-size: 0.86rem;
+    letter-spacing: 0.68em;
+    padding-left: 0.68em;
   }
 
   .opening-loader::before {
-    width: 138px;
+    width: 156px;
   }
 
   .language-switch {
@@ -924,9 +924,10 @@ body.is-opening main {
     display: grid;
     position: relative;
     z-index: 2;
-    gap: 6px;
-    width: 30px;
-    padding: 4px 0;
+    grid-template-columns: 26px auto;
+    gap: 0 10px;
+    width: auto;
+    padding: 3px 0;
     border: 0;
     background: transparent;
     cursor: pointer;
@@ -935,13 +936,26 @@ body.is-opening main {
 
   .mobile-menu-toggle span {
     display: block;
-    width: 24px;
+    grid-column: 1;
+    width: 26px;
     height: 1px;
-    background: rgba(232, 205, 169, 0.78);
+    background: rgba(248, 229, 198, 0.9);
     transform-origin: center;
     transition:
       opacity 320ms ease,
       transform 320ms ease;
+  }
+
+  .mobile-menu-toggle em {
+    grid-column: 2;
+    grid-row: 1 / 4;
+    align-self: center;
+    color: rgba(248, 229, 198, 0.84);
+    font-size: 0.5rem;
+    font-style: normal;
+    font-weight: 300;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
   }
 
   .home-nav.is-open .mobile-menu-toggle span:first-child {
