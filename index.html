@@ -26,6 +26,16 @@
       <section class="home" aria-label="KΛIN home">
         <div class="home-image" aria-hidden="true"></div>
         <nav class="home-nav" aria-label="KΛIN sections">
+          <button
+            class="mobile-menu-toggle"
+            type="button"
+            aria-label="Open navigation"
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
           <a class="nav-story" href="#story" data-i18n="nav.story">Our Story</a>
           <a class="nav-menu" href="#menu" data-i18n="nav.menu">Menu</a>
           <div class="language-switch" aria-label="Language">
@@ -269,6 +279,8 @@
 
       const languageToggle = document.querySelector('[data-language-toggle]');
       const translatable = document.querySelectorAll('[data-i18n]');
+      const homeNav = document.querySelector('.home-nav');
+      const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
 
       const setLanguage = (language) => {
         const dictionary = translations[language] || translations.en;
@@ -295,6 +307,23 @@
       languageToggle.addEventListener('click', () => {
         const nextLanguage = document.documentElement.lang === 'en' ? 'nl' : 'en';
         setLanguage(nextLanguage);
+      });
+
+      mobileMenuToggle.addEventListener('click', () => {
+        const isOpen = homeNav.classList.toggle('is-open');
+        mobileMenuToggle.setAttribute('aria-expanded', String(isOpen));
+        mobileMenuToggle.setAttribute(
+          'aria-label',
+          isOpen ? 'Close navigation' : 'Open navigation'
+        );
+      });
+
+      homeNav.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          homeNav.classList.remove('is-open');
+          mobileMenuToggle.setAttribute('aria-expanded', 'false');
+          mobileMenuToggle.setAttribute('aria-label', 'Open navigation');
+        });
       });
 
       const openingSkip = document.querySelector('.opening-skip');
