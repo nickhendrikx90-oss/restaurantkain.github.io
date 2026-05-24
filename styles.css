@@ -854,15 +854,15 @@ body.is-opening main {
   }
 
   .opening-loader {
-    top: 48px;
-    gap: 12px;
-    font-size: 0.58rem;
-    letter-spacing: 0.38em;
-    padding-left: 0.38em;
+    top: 18svh;
+    gap: 14px;
+    font-size: 0.68rem;
+    letter-spacing: 0.44em;
+    padding-left: 0.44em;
   }
 
   .opening-loader::before {
-    width: 96px;
+    width: 112px;
   }
 
   .language-switch {
