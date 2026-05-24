@@ -330,6 +330,12 @@
       const revealSite = (resetToHome = false) => {
         const wasOpening = document.body.classList.contains('is-opening');
         document.body.classList.remove('is-opening');
+        if (wasOpening) {
+          document.body.classList.add('is-entering');
+          window.setTimeout(() => {
+            document.body.classList.remove('is-entering');
+          }, 1500);
+        }
         if (resetToHome && wasOpening) {
           window.scrollTo({ top: 0, behavior: 'auto' });
         }
