@@ -853,8 +853,17 @@ body.is-opening main {
   }
 
   .home-image {
-    background-position: center top;
-    filter: sepia(0.13) saturate(0.84) brightness(0.96) contrast(1.08) hue-rotate(-5deg);
+    background-position: center 44%;
+    filter: sepia(0.18) saturate(0.82) brightness(0.84) contrast(1.14) hue-rotate(-7deg);
+  }
+
+  .home-image::after {
+    background:
+      radial-gradient(circle at 50% 46%, transparent 0 28%, rgba(20, 13, 9, 0.34) 74%),
+      linear-gradient(180deg, rgba(91, 61, 36, 0.16), rgba(18, 12, 8, 0.24)),
+      radial-gradient(rgba(226, 209, 183, 0.05) 0.7px, transparent 0.7px);
+    background-size: 100% 100%, 100% 100%, 4px 4px;
+    opacity: 0.48;
   }
 
   .opening-loader {
@@ -876,6 +885,7 @@ body.is-opening main {
   .language-switch button {
     font-size: 0.5rem;
     letter-spacing: 0.16em;
+    color: rgba(232, 205, 169, 0.78);
   }
 
   .home-nav a,
@@ -927,7 +937,7 @@ body.is-opening main {
     display: block;
     width: 22px;
     height: 1px;
-    background: rgba(248, 232, 204, 0.82);
+    background: rgba(232, 205, 169, 0.78);
     transform-origin: center;
     transition:
       opacity 320ms ease,
