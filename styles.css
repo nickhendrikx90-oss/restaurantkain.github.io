@@ -23,6 +23,7 @@
 
 * {
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html,
@@ -32,8 +33,8 @@ body {
 }
 
 html {
-  scroll-snap-type: y mandatory;
-  overscroll-behavior-y: contain;
+  scroll-snap-type: y proximity;
+  overscroll-behavior-y: auto;
 }
 
 body {
@@ -70,6 +71,7 @@ body:not(.is-opening) .opening-video {
 a {
   color: inherit;
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .opening-video {
@@ -78,7 +80,7 @@ a {
   z-index: 60;
   overflow: hidden;
   background: #4f4235;
-  transition: opacity 1.4s ease, visibility 1.4s ease;
+  transition: opacity 1.8s ease, visibility 1.8s ease;
 }
 
 .opening-skip {
@@ -89,6 +91,15 @@ a {
   border: 0;
   background: transparent;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  appearance: none;
+  touch-action: manipulation;
+}
+
+.opening-skip:focus,
+.opening-skip:active {
+  outline: none;
+  background: transparent;
 }
 
 .opening-stills,
@@ -335,6 +346,13 @@ body.is-opening main {
 
 .home-nav a:hover::after {
   width: calc(100% - 0.46em);
+}
+
+.home-nav a:active,
+.language-switch button:active,
+.contact-details a:active,
+.contact-location:active {
+  opacity: 0.62;
 }
 
 .wordmark {
@@ -812,8 +830,10 @@ body.is-opening main {
   }
 
   .home {
-    min-height: 94svh;
+    min-height: 100svh;
     padding: 26px 22px;
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
   }
 
   .home-nav {
@@ -858,6 +878,10 @@ body.is-opening main {
   .label {
     font-size: 0.5rem;
     letter-spacing: 0.16em;
+  }
+
+  .home-nav a::after {
+    display: none;
   }
 
   .story-copy .label,
@@ -907,6 +931,8 @@ body.is-opening main {
   .reservations,
   .contact {
     width: min(100% - 44px, 520px);
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
   }
 
   .story {
@@ -914,8 +940,6 @@ body.is-opening main {
     min-height: 100svh;
     gap: 30px;
     padding: 58px 0 78px;
-    scroll-snap-align: start;
-    scroll-snap-stop: normal;
   }
 
   .story-copy {
