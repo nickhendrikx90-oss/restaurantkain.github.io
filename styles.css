@@ -808,7 +808,7 @@ body.is-opening main {
 
 @media (max-width: 760px) {
   html {
-    scroll-snap-type: none;
+    scroll-snap-type: y proximity;
   }
 
   .home {
@@ -911,10 +911,10 @@ body.is-opening main {
 
   .story {
     grid-template-columns: 1fr;
-    min-height: auto;
+    min-height: 100svh;
     gap: 30px;
     padding: 58px 0 78px;
-    scroll-snap-align: none;
+    scroll-snap-align: start;
     scroll-snap-stop: normal;
   }
 
@@ -953,7 +953,7 @@ body.is-opening main {
   }
 
   .menu {
-    min-height: auto;
+    min-height: 100svh;
     padding: 72px 0 82px;
   }
 
@@ -985,14 +985,14 @@ body.is-opening main {
   }
 
   .reservations {
-    min-height: auto;
+    min-height: 100svh;
     grid-template-columns: 1fr;
     gap: 28px;
     padding: 78px 0 88px;
   }
 
   .contact {
-    min-height: auto;
+    min-height: 100svh;
     gap: 32px;
     padding: 82px 0 92px;
   }
