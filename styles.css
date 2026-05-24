@@ -937,7 +937,7 @@ body.is-opening main {
     grid-column: 1;
     width: 26px;
     height: 1px;
-    background: rgba(248, 229, 198, 0.9);
+    background: linear-gradient(90deg, rgba(201, 170, 120, 0.64), rgba(240, 223, 196, 0.92));
     transform-origin: center;
     transition:
       opacity 320ms ease,
