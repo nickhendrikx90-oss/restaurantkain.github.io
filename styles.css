@@ -835,13 +835,13 @@ body.is-opening main {
 
   .home {
     min-height: 100svh;
-    padding: 26px 22px;
+    padding: 30px 24px;
     scroll-snap-align: start;
     scroll-snap-stop: normal;
   }
 
   .home-nav {
-    inset: 26px 22px;
+    inset: 30px 24px;
     display: grid;
     grid-template-columns: 1fr auto;
     grid-template-rows: auto;
@@ -867,15 +867,15 @@ body.is-opening main {
   }
 
   .opening-loader {
-    top: 18svh;
-    gap: 15px;
-    font-size: 0.78rem;
-    letter-spacing: 0.5em;
-    padding-left: 0.5em;
+    top: 20svh;
+    gap: 16px;
+    font-size: 0.72rem;
+    letter-spacing: 0.62em;
+    padding-left: 0.62em;
   }
 
   .opening-loader::before {
-    width: 126px;
+    width: 138px;
   }
 
   .language-switch {
@@ -924,9 +924,9 @@ body.is-opening main {
     display: grid;
     position: relative;
     z-index: 2;
-    gap: 5px;
-    width: 28px;
-    padding: 3px 0;
+    gap: 6px;
+    width: 30px;
+    padding: 4px 0;
     border: 0;
     background: transparent;
     cursor: pointer;
@@ -935,7 +935,7 @@ body.is-opening main {
 
   .mobile-menu-toggle span {
     display: block;
-    width: 22px;
+    width: 24px;
     height: 1px;
     background: rgba(232, 205, 169, 0.78);
     transform-origin: center;
@@ -945,7 +945,7 @@ body.is-opening main {
   }
 
   .home-nav.is-open .mobile-menu-toggle span:first-child {
-    transform: translateY(6px) rotate(38deg);
+    transform: translateY(7px) rotate(38deg);
   }
 
   .home-nav.is-open .mobile-menu-toggle span:nth-child(2) {
@@ -953,7 +953,7 @@ body.is-opening main {
   }
 
   .home-nav.is-open .mobile-menu-toggle span:last-child {
-    transform: translateY(-6px) rotate(-38deg);
+    transform: translateY(-7px) rotate(-38deg);
   }
 
   .home-nav > a {
@@ -969,8 +969,8 @@ body.is-opening main {
     width: max-content;
     padding: 0;
     color: rgba(248, 232, 204, 0.86);
-    font-size: 0.56rem;
-    letter-spacing: 0.2em;
+    font-size: 0.52rem;
+    letter-spacing: 0.24em;
   }
 
   .home-nav.is-open .nav-story {
@@ -1002,7 +1002,7 @@ body.is-opening main {
 
   .home-nav.is-open {
     grid-template-rows: auto repeat(4, auto) 1fr;
-    row-gap: 18px;
+    row-gap: 20px;
   }
 
   .home-nav.is-open::before {
