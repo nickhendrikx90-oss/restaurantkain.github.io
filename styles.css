@@ -813,11 +813,19 @@ body.is-opening main {
 
   .home {
     min-height: 94svh;
-    padding: 24px 20px;
+    padding: 26px 22px;
   }
 
   .home-nav {
-    inset: 24px 20px;
+    inset: 26px 22px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      "story menu lang"
+      ". . ."
+      "reservations . contact";
+    justify-items: center;
     min-height: auto;
   }
 
@@ -853,30 +861,6 @@ body.is-opening main {
     letter-spacing: 0.16em;
   }
 
-  .home-nav a {
-    padding-bottom: 8px;
-  }
-
-  .home-nav .nav-menu {
-    left: 50%;
-    max-width: 92px;
-    text-align: center;
-  }
-
-  .home-nav .nav-story,
-  .home-nav .nav-reservations {
-    left: 0;
-    max-width: 42%;
-    text-align: left;
-  }
-
-  .home-nav .language-switch,
-  .home-nav .nav-contact {
-    right: 0;
-    max-width: 42%;
-    text-align: right;
-  }
-
   .story-copy .label,
   .reservation-prices .label,
   .reservation-information .label,
@@ -889,6 +873,37 @@ body.is-opening main {
     font-size: 0.62rem;
     letter-spacing: 0.42em;
     padding-left: 0.42em;
+  }
+
+  .home-nav > a,
+  .home-nav .language-switch {
+    position: static;
+    transform: none;
+  }
+
+  .home-nav .nav-story {
+    grid-area: story;
+    justify-self: start;
+  }
+
+  .home-nav .nav-menu {
+    grid-area: menu;
+    justify-self: center;
+  }
+
+  .home-nav .language-switch {
+    grid-area: lang;
+    justify-self: end;
+  }
+
+  .home-nav .nav-reservations {
+    grid-area: reservations;
+    justify-self: start;
+  }
+
+  .home-nav .nav-contact {
+    grid-area: contact;
+    justify-self: end;
   }
 
   .story,
