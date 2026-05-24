@@ -819,13 +819,12 @@ body.is-opening main {
   .home-nav {
     inset: 26px 22px;
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto;
     grid-template-areas:
-      "story menu lang"
-      ". . ."
-      "reservations . contact";
-    justify-items: center;
+      "lang menu";
+    align-content: start;
+    justify-items: stretch;
     min-height: auto;
   }
 
@@ -882,28 +881,25 @@ body.is-opening main {
   }
 
   .home-nav .nav-story {
-    grid-area: story;
-    justify-self: start;
+    display: none;
   }
 
   .home-nav .nav-menu {
     grid-area: menu;
-    justify-self: center;
+    justify-self: end;
   }
 
   .home-nav .language-switch {
     grid-area: lang;
-    justify-self: end;
-  }
-
-  .home-nav .nav-reservations {
-    grid-area: reservations;
     justify-self: start;
   }
 
+  .home-nav .nav-reservations {
+    display: none;
+  }
+
   .home-nav .nav-contact {
-    grid-area: contact;
-    justify-self: end;
+    display: none;
   }
 
   .story,
