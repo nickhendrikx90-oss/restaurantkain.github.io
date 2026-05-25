@@ -1063,10 +1063,10 @@ body.is-opening main {
     position: absolute;
     z-index: 4;
     left: 50%;
-    top: 202px;
+    top: 201px;
     display: grid;
-    width: min(58vw, 204px);
-    min-height: 30px;
+    width: min(54vw, 192px);
+    min-height: 28px;
     place-items: center;
     transform: translateX(-50%);
     pointer-events: auto;
@@ -1075,17 +1075,32 @@ body.is-opening main {
   .home-nav.is-open .mobile-menu-language button {
     display: block;
     width: 100%;
-    min-height: 30px;
+    min-height: 28px;
     padding: 0;
     border: 0;
     background: transparent;
-    color: rgba(214, 178, 128, 0.76);
+    color: rgba(209, 169, 116, 0.72);
     cursor: pointer;
     font: inherit;
-    font-size: 0.5rem;
-    letter-spacing: 0.16em;
+    font-size: 0.48rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     touch-action: manipulation;
+    transition: color 320ms ease, opacity 320ms ease;
+  }
+
+  .home-nav.is-open .mobile-menu-language button::before {
+    content: '';
+    display: block;
+    width: 42px;
+    height: 1px;
+    margin: 0 auto 12px;
+    background: linear-gradient(90deg, transparent, rgba(201, 160, 104, 0.38), transparent);
+  }
+
+  .home-nav.is-open .mobile-menu-language button:active {
+    opacity: 0.62;
   }
 
   .home-nav.is-open .nav-story {
