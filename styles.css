@@ -1069,6 +1069,7 @@ body.is-opening main {
     color: rgba(214, 178, 128, 0.76);
     font-size: 0.5rem;
     letter-spacing: 0.16em;
+    pointer-events: auto;
     text-transform: uppercase;
   }
 
