@@ -856,7 +856,7 @@ body.is-opening main {
   }
 
   .home-image {
-    background-position: 50% 49%;
+    background-position: 50% 52%;
     background-size: auto 101%;
     filter: sepia(0.2) saturate(0.74) brightness(0.74) contrast(1.2) hue-rotate(-9deg);
   }
