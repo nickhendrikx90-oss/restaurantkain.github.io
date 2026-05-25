@@ -1061,7 +1061,7 @@ body.is-opening main {
   }
 
   .home-nav.is-open .mobile-menu-language {
-    top: 208px;
+    top: 214px;
     border: 0;
     background: transparent;
     cursor: pointer;
@@ -1071,10 +1071,11 @@ body.is-opening main {
     letter-spacing: 0.16em;
     pointer-events: auto;
     text-transform: uppercase;
+    z-index: 4;
   }
 
   .home-nav.is-open .nav-story {
-    top: 70px;
+    top: 68px;
   }
 
   .home-nav .nav-menu {
@@ -1082,7 +1083,7 @@ body.is-opening main {
   }
 
   .home-nav.is-open .nav-menu {
-    top: 104px;
+    top: 102px;
   }
 
   .home-nav .language-switch {
@@ -1090,11 +1091,11 @@ body.is-opening main {
   }
 
   .home-nav.is-open .nav-reservations {
-    top: 138px;
+    top: 136px;
   }
 
   .home-nav.is-open .nav-contact {
-    top: 172px;
+    top: 170px;
   }
 
   .home-nav.is-open {
@@ -1107,7 +1108,7 @@ body.is-opening main {
     left: 50%;
     top: 52px;
     width: min(66vw, 232px);
-    height: 190px;
+    height: 198px;
     background:
       radial-gradient(circle at 50% 4%, rgba(202, 154, 92, 0.11), transparent 68%),
       linear-gradient(180deg, rgba(68, 45, 29, 0.46), rgba(42, 27, 18, 0.4));

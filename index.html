@@ -315,7 +315,9 @@
       setLanguage(localStorage.getItem('kain-language') || 'en');
 
       languageToggles.forEach((toggle) => {
-        toggle.addEventListener('click', () => {
+        toggle.addEventListener('click', (event) => {
+          event.preventDefault();
+          event.stopPropagation();
           const nextLanguage = document.documentElement.lang === 'en' ? 'nl' : 'en';
           setLanguage(nextLanguage);
           homeNav.classList.remove('is-open');
