@@ -834,11 +834,12 @@ body.is-opening main {
 
 @media (max-width: 760px) {
   html {
-    scroll-snap-type: none;
+    scroll-snap-type: y proximity;
+    scroll-padding-top: 0;
   }
 
   .home {
-    min-height: 100svh;
+    min-height: 104svh;
     padding: 28px 24px;
   }
 
@@ -1035,13 +1036,15 @@ body.is-opening main {
   .reservations,
   .contact {
     width: min(100% - 42px, 500px);
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
   }
 
   .story {
     grid-template-columns: 1fr;
-    min-height: 100dvh;
+    min-height: 118dvh;
     gap: clamp(18px, 3.2svh, 28px);
-    padding: clamp(34px, 6svh, 56px) 0 clamp(42px, 7svh, 70px);
+    padding: clamp(52px, 8svh, 76px) 0 clamp(62px, 10svh, 92px);
   }
 
   .story-copy {
@@ -1079,8 +1082,8 @@ body.is-opening main {
   }
 
   .menu {
-    min-height: 100dvh;
-    padding: clamp(48px, 7svh, 68px) 0 clamp(52px, 8svh, 76px);
+    min-height: 114dvh;
+    padding: clamp(58px, 9svh, 84px) 0 clamp(64px, 10svh, 94px);
   }
 
   .menu-heading {
@@ -1111,16 +1114,16 @@ body.is-opening main {
   }
 
   .reservations {
-    min-height: 100dvh;
+    min-height: 116dvh;
     grid-template-columns: 1fr;
     gap: clamp(18px, 3.2svh, 28px);
-    padding: clamp(52px, 8svh, 76px) 0 clamp(56px, 8svh, 82px);
+    padding: clamp(62px, 9svh, 90px) 0 clamp(70px, 11svh, 104px);
   }
 
   .contact {
-    min-height: 100dvh;
+    min-height: 116dvh;
     gap: clamp(20px, 3.6svh, 32px);
-    padding: clamp(58px, 8svh, 82px) 0 clamp(62px, 9svh, 92px);
+    padding: clamp(68px, 10svh, 96px) 0 clamp(76px, 12svh, 110px);
   }
 
   .reservation-intro,
