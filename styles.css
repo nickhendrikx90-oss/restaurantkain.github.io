@@ -1065,6 +1065,8 @@ body.is-opening main {
     background: transparent;
     cursor: pointer;
     font: inherit;
+    font-size: 0.54rem;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
   }
 
@@ -1081,10 +1083,7 @@ body.is-opening main {
   }
 
   .home-nav .language-switch {
-    grid-area: lang;
-    justify-self: end;
-    position: relative;
-    z-index: 2;
+    display: none;
   }
 
   .home-nav.is-open .nav-reservations {

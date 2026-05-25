@@ -42,7 +42,7 @@
             <button type="button" data-language-toggle>NL</button>
           </div>
           <button class="mobile-menu-language" type="button" data-language-toggle-menu>
-            NL
+            Nederlands
           </button>
           <a class="nav-reservations" href="#reservations" data-i18n="nav.reservations">Reservations</a>
           <a class="nav-contact" href="#contact" data-i18n="nav.contact">Contact</a>
@@ -300,6 +300,9 @@
 
         languageToggles.forEach((toggle) => {
           toggle.textContent = language === 'en' ? 'NL' : 'EN';
+          if (toggle.dataset.languageToggleMenu !== undefined) {
+            toggle.textContent = language === 'en' ? 'Nederlands' : 'English';
+          }
           toggle.setAttribute(
             'aria-label',
             language === 'en' ? 'Nederlands' : 'English'
