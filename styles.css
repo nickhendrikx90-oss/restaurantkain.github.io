@@ -212,6 +212,10 @@ a {
   display: none;
 }
 
+.mobile-menu-language {
+  display: none;
+}
+
 .language-switch button:hover {
   color: rgba(255, 242, 218, 0.96);
 }
@@ -842,8 +846,13 @@ body.is-opening main {
   }
 
   html {
-    scroll-snap-type: y proximity;
+    scroll-snap-type: y mandatory;
     scroll-padding-top: 0;
+    overscroll-behavior-y: contain;
+  }
+
+  body {
+    overscroll-behavior-y: contain;
   }
 
   body {
@@ -980,7 +989,8 @@ body.is-opening main {
   }
 
   .home-nav > a,
-  .home-nav .language-switch {
+  .home-nav .language-switch,
+  .home-nav .mobile-menu-language {
     position: static;
     transform: none;
   }
@@ -1030,7 +1040,12 @@ body.is-opening main {
     display: none;
   }
 
-  .home-nav.is-open > a {
+  .mobile-menu-language {
+    display: none;
+  }
+
+  .home-nav.is-open > a,
+  .home-nav.is-open .mobile-menu-language {
     display: block;
     position: absolute;
     z-index: 2;
@@ -1041,6 +1056,15 @@ body.is-opening main {
     font-size: 0.62rem;
     letter-spacing: 0.22em;
     transform: translateX(-50%);
+  }
+
+  .home-nav.is-open .mobile-menu-language {
+    top: 232px;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    font: inherit;
+    text-transform: uppercase;
   }
 
   .home-nav.is-open .nav-story {
@@ -1080,7 +1104,7 @@ body.is-opening main {
     left: 50%;
     top: 52px;
     width: min(72vw, 260px);
-    height: 178px;
+    height: 218px;
     background:
       radial-gradient(circle at 50% 0%, rgba(212, 166, 104, 0.1), transparent 70%),
       rgba(52, 35, 24, 0.48);
@@ -1095,7 +1119,7 @@ body.is-opening main {
   .contact {
     width: min(100% - 42px, 500px);
     scroll-snap-align: start;
-    scroll-snap-stop: normal;
+    scroll-snap-stop: always;
   }
 
   .story::after,

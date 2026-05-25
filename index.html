@@ -41,6 +41,9 @@
           <div class="language-switch" aria-label="Language">
             <button type="button" data-language-toggle>NL</button>
           </div>
+          <button class="mobile-menu-language" type="button" data-language-toggle-menu>
+            NL
+          </button>
           <a class="nav-reservations" href="#reservations" data-i18n="nav.reservations">Reservations</a>
           <a class="nav-contact" href="#contact" data-i18n="nav.contact">Contact</a>
         </nav>
@@ -277,7 +280,9 @@
         }
       };
 
-      const languageToggle = document.querySelector('[data-language-toggle]');
+      const languageToggles = document.querySelectorAll(
+        '[data-language-toggle], [data-language-toggle-menu]'
+      );
       const translatable = document.querySelectorAll('[data-i18n]');
       const homeNav = document.querySelector('.home-nav');
       const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
@@ -293,20 +298,27 @@
           }
         });
 
-        languageToggle.textContent = language === 'en' ? 'NL' : 'EN';
-        languageToggle.setAttribute(
-          'aria-label',
-          language === 'en' ? 'Nederlands' : 'English'
-        );
+        languageToggles.forEach((toggle) => {
+          toggle.textContent = language === 'en' ? 'NL' : 'EN';
+          toggle.setAttribute(
+            'aria-label',
+            language === 'en' ? 'Nederlands' : 'English'
+          );
+        });
 
         localStorage.setItem('kain-language', language);
       };
 
       setLanguage(localStorage.getItem('kain-language') || 'en');
 
-      languageToggle.addEventListener('click', () => {
-        const nextLanguage = document.documentElement.lang === 'en' ? 'nl' : 'en';
-        setLanguage(nextLanguage);
+      languageToggles.forEach((toggle) => {
+        toggle.addEventListener('click', () => {
+          const nextLanguage = document.documentElement.lang === 'en' ? 'nl' : 'en';
+          setLanguage(nextLanguage);
+          homeNav.classList.remove('is-open');
+          mobileMenuToggle.setAttribute('aria-expanded', 'false');
+          mobileMenuToggle.setAttribute('aria-label', 'Open navigation');
+        });
       });
 
       mobileMenuToggle.addEventListener('click', () => {
