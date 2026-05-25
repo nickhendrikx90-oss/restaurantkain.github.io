@@ -839,10 +839,10 @@ body.is-opening main {
 @media (max-width: 760px) {
   :root {
     --page-ground:
-      radial-gradient(circle at 50% 34%, rgba(142, 96, 57, 0.18), rgba(51, 35, 24, 0.42) 72%),
-      linear-gradient(180deg, rgba(76, 52, 35, 0.22), rgba(44, 29, 19, 0.42)),
+      radial-gradient(circle at 50% 32%, rgba(156, 105, 61, 0.2), rgba(58, 38, 25, 0.36) 72%),
+      linear-gradient(180deg, rgba(84, 57, 37, 0.24), rgba(48, 31, 20, 0.34)),
       url('page-background.png');
-    --ground-filter: sepia(0.24) saturate(0.9) brightness(0.92) contrast(1.02) hue-rotate(-8deg);
+    --ground-filter: sepia(0.26) saturate(0.94) brightness(0.96) contrast(1) hue-rotate(-8deg);
   }
 
   html {
@@ -866,7 +866,7 @@ body.is-opening main {
   }
 
   main {
-    background: #3f2d21;
+    background: #443124;
   }
 
   .opening-video {
@@ -909,10 +909,10 @@ body.is-opening main {
     background-image:
       radial-gradient(circle at 50% 43%, rgba(151, 101, 57, 0.26), transparent 36%),
       radial-gradient(circle at 50% 72%, rgba(132, 82, 47, 0.22), transparent 46%),
-      linear-gradient(180deg, #4a3628 0%, #37261a 52%, #2a1b12 100%);
+      linear-gradient(180deg, #4d392b 0%, #39281c 52%, #2d1e14 100%);
     background-position: center;
     background-size: 100% 100%;
-    filter: sepia(0.18) saturate(0.86) brightness(0.88) contrast(1.1) hue-rotate(-8deg);
+    filter: sepia(0.18) saturate(0.88) brightness(0.92) contrast(1.06) hue-rotate(-8deg);
   }
 
   .home-image::before {
@@ -930,8 +930,8 @@ body.is-opening main {
 
   .home-image::after {
     background:
-      radial-gradient(circle at 50% 45%, rgba(142, 94, 54, 0.08) 0 22%, rgba(33, 21, 14, 0.34) 78%),
-      linear-gradient(180deg, rgba(110, 73, 43, 0.18), rgba(38, 24, 16, 0.22)),
+      radial-gradient(circle at 50% 45%, rgba(142, 94, 54, 0.08) 0 22%, rgba(39, 25, 16, 0.28) 78%),
+      linear-gradient(180deg, rgba(116, 76, 44, 0.16), rgba(43, 28, 18, 0.18)),
       radial-gradient(rgba(226, 209, 183, 0.044) 0.7px, transparent 0.7px);
     background-size: 100% 100%, 100% 100%, 4px 4px;
     opacity: 0.5;
@@ -1072,6 +1072,7 @@ body.is-opening main {
     pointer-events: auto;
     text-transform: uppercase;
     z-index: 4;
+    touch-action: manipulation;
   }
 
   .home-nav.is-open .nav-story {
@@ -1132,8 +1133,8 @@ body.is-opening main {
   .reservations::after,
   .contact::after {
     background:
-      radial-gradient(circle at 50% 34%, rgba(122, 82, 48, 0.14), rgba(40, 27, 18, 0.46) 72%),
-      linear-gradient(180deg, rgba(68, 45, 29, 0.28), rgba(38, 25, 17, 0.38));
+      radial-gradient(circle at 50% 34%, rgba(139, 91, 52, 0.16), rgba(45, 30, 20, 0.38) 72%),
+      linear-gradient(180deg, rgba(76, 50, 32, 0.24), rgba(45, 30, 20, 0.3));
   }
 
   .story {

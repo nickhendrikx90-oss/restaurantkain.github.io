@@ -320,9 +320,6 @@
           event.stopPropagation();
           const nextLanguage = document.documentElement.lang === 'en' ? 'nl' : 'en';
           setLanguage(nextLanguage);
-          homeNav.classList.remove('is-open');
-          mobileMenuToggle.setAttribute('aria-expanded', 'false');
-          mobileMenuToggle.setAttribute('aria-label', 'Open navigation');
         });
       });
 
