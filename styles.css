@@ -123,15 +123,15 @@ a {
   object-fit: cover;
   filter: sepia(0.32) saturate(0.72) brightness(0.6) contrast(1.12) hue-rotate(-9deg);
   transform: scale(1.08);
-  animation: openingDrift 28s cubic-bezier(0.18, 0.02, 0.12, 1) forwards;
+  animation: openingDrift 12s cubic-bezier(0.18, 0.02, 0.12, 1) forwards;
 }
 
 .opening-stills img:nth-child(2) {
   opacity: 0;
   mix-blend-mode: multiply;
   animation:
-    openingDriftAlt 28s cubic-bezier(0.18, 0.02, 0.12, 1) forwards,
-    openingCrossfade 28s ease-in-out forwards;
+    openingDriftAlt 12s cubic-bezier(0.18, 0.02, 0.12, 1) forwards,
+    openingCrossfade 12s ease-in-out forwards;
 }
 
 .opening-video::after {
@@ -142,7 +142,7 @@ a {
   background:
     radial-gradient(ellipse at 50% 42%, rgba(196, 150, 92, 0.1) 0 18%, rgba(51, 34, 23, 0.34) 58%, rgba(19, 12, 8, 0.62) 100%),
     linear-gradient(180deg, rgba(126, 90, 55, 0.14), rgba(36, 24, 16, 0.58));
-  animation: openingTension 28s ease-in-out forwards;
+  animation: openingTension 12s ease-in-out forwards;
 }
 
 .opening-video::before {
@@ -152,7 +152,7 @@ a {
   z-index: 2;
   pointer-events: none;
   background: #261a12;
-  animation: openingDawn 7.2s ease forwards;
+  animation: openingDawn 4.4s ease forwards;
 }
 
 .opening-loader {
