@@ -158,7 +158,7 @@ a {
 .opening-loader {
   position: absolute;
   left: 50%;
-  top: clamp(78px, 11vw, 138px);
+  top: 50%;
   z-index: 3;
   display: grid;
   justify-items: center;
@@ -169,7 +169,7 @@ a {
   letter-spacing: 1em;
   padding-left: 1em;
   text-transform: uppercase;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   animation: introMarkArrive 4.2s ease forwards;
 }
 
@@ -1393,7 +1393,7 @@ body.is-opening main {
   0% {
     opacity: 0;
     filter: blur(9px);
-    transform: translate(-50%, 10px);
+    transform: translate(-50%, calc(-50% + 10px));
   }
 
   44% {
@@ -1403,7 +1403,7 @@ body.is-opening main {
   100% {
     opacity: 1;
     filter: blur(0);
-    transform: translate(-50%, 0);
+    transform: translate(-50%, -50%);
   }
 }
 
