@@ -955,6 +955,7 @@ body.is-opening main {
   }
 
   .language-switch {
+    display: none;
     gap: 16px;
   }
 
