@@ -858,9 +858,9 @@ body.is-opening main {
   .home-image {
     overflow: hidden;
     background-image:
-      radial-gradient(circle at 50% 44%, rgba(91, 60, 35, 0.22), transparent 34%),
-      radial-gradient(circle at 50% 72%, rgba(104, 62, 32, 0.14), transparent 44%),
-      linear-gradient(180deg, #312216 0%, #21150d 52%, #130b07 100%);
+      radial-gradient(circle at 50% 43%, rgba(136, 91, 52, 0.24), transparent 36%),
+      radial-gradient(circle at 50% 72%, rgba(122, 75, 42, 0.2), transparent 46%),
+      linear-gradient(180deg, #433024 0%, #302116 52%, #23160f 100%);
     background-position: center;
     background-size: 100% 100%;
     filter: sepia(0.2) saturate(0.74) brightness(0.74) contrast(1.2) hue-rotate(-9deg);
