@@ -856,9 +856,27 @@ body.is-opening main {
   }
 
   .home-image {
-    background-position: 50% 52%;
-    background-size: auto 101%;
+    overflow: hidden;
+    background-image:
+      radial-gradient(circle at 50% 44%, rgba(91, 60, 35, 0.22), transparent 34%),
+      radial-gradient(circle at 50% 72%, rgba(104, 62, 32, 0.14), transparent 44%),
+      linear-gradient(180deg, #312216 0%, #21150d 52%, #130b07 100%);
+    background-position: center;
+    background-size: 100% 100%;
     filter: sepia(0.2) saturate(0.74) brightness(0.74) contrast(1.2) hue-rotate(-9deg);
+  }
+
+  .home-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('deskop pic.png');
+    background-repeat: no-repeat;
+    background-position: 50% 49%;
+    background-size: min(245vw, 960px) auto;
+    opacity: 0.98;
+    -webkit-mask-image: radial-gradient(ellipse 55% 38% at 50% 49%, #000 0 58%, transparent 82%);
+    mask-image: radial-gradient(ellipse 55% 38% at 50% 49%, #000 0 58%, transparent 82%);
   }
 
   .home-image::after {
