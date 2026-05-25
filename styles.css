@@ -907,12 +907,13 @@ body.is-opening main {
   .home-image {
     overflow: hidden;
     background-image:
-      radial-gradient(circle at 50% 43%, rgba(151, 101, 57, 0.26), transparent 36%),
-      radial-gradient(circle at 50% 72%, rgba(132, 82, 47, 0.22), transparent 46%),
-      linear-gradient(180deg, #4d392b 0%, #39281c 52%, #2d1e14 100%);
+      radial-gradient(ellipse at 50% 38%, rgba(178, 121, 68, 0.24), transparent 42%),
+      radial-gradient(ellipse at 50% 62%, rgba(124, 78, 44, 0.22), transparent 50%),
+      radial-gradient(circle at 50% 94%, rgba(80, 49, 29, 0.28), transparent 42%),
+      linear-gradient(180deg, #564031 0%, #3f2d20 48%, #342216 100%);
     background-position: center;
     background-size: 100% 100%;
-    filter: sepia(0.18) saturate(0.88) brightness(0.92) contrast(1.06) hue-rotate(-8deg);
+    filter: sepia(0.14) saturate(0.98) brightness(0.96) contrast(1.02) hue-rotate(-7deg);
   }
 
   .home-image::before {
@@ -922,19 +923,20 @@ body.is-opening main {
     background-image: url('deskop pic.png');
     background-repeat: no-repeat;
     background-position: 50% 49%;
-    background-size: min(245vw, 960px) auto;
-    opacity: 0.98;
-    -webkit-mask-image: radial-gradient(ellipse 55% 38% at 50% 49%, #000 0 58%, transparent 82%);
-    mask-image: radial-gradient(ellipse 55% 38% at 50% 49%, #000 0 58%, transparent 82%);
+    background-size: min(238vw, 930px) auto;
+    opacity: 0.9;
+    filter: sepia(0.1) saturate(0.92) brightness(1.02) contrast(0.98);
+    -webkit-mask-image: radial-gradient(ellipse 58% 40% at 50% 49%, #000 0 54%, transparent 84%);
+    mask-image: radial-gradient(ellipse 58% 40% at 50% 49%, #000 0 54%, transparent 84%);
   }
 
   .home-image::after {
     background:
-      radial-gradient(circle at 50% 45%, rgba(142, 94, 54, 0.08) 0 22%, rgba(39, 25, 16, 0.28) 78%),
-      linear-gradient(180deg, rgba(116, 76, 44, 0.16), rgba(43, 28, 18, 0.18)),
-      radial-gradient(rgba(226, 209, 183, 0.044) 0.7px, transparent 0.7px);
+      radial-gradient(ellipse at 50% 45%, rgba(201, 152, 92, 0.07) 0 20%, rgba(47, 30, 19, 0.22) 78%),
+      linear-gradient(180deg, rgba(128, 85, 50, 0.1), rgba(43, 28, 18, 0.12)),
+      radial-gradient(rgba(226, 209, 183, 0.038) 0.7px, transparent 0.7px);
     background-size: 100% 100%, 100% 100%, 4px 4px;
-    opacity: 0.5;
+    opacity: 0.42;
   }
 
   .opening-loader {
