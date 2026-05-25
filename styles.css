@@ -833,9 +833,49 @@ body.is-opening main {
 }
 
 @media (max-width: 760px) {
+  :root {
+    --page-ground:
+      radial-gradient(circle at 50% 34%, rgba(142, 96, 57, 0.18), rgba(51, 35, 24, 0.42) 72%),
+      linear-gradient(180deg, rgba(76, 52, 35, 0.22), rgba(44, 29, 19, 0.42)),
+      url('page-background.png');
+    --ground-filter: sepia(0.24) saturate(0.9) brightness(0.92) contrast(1.02) hue-rotate(-8deg);
+  }
+
   html {
     scroll-snap-type: y proximity;
     scroll-padding-top: 0;
+  }
+
+  body {
+    background:
+      radial-gradient(circle at 50% 0%, rgba(177, 122, 68, 0.18), transparent 28rem),
+      linear-gradient(180deg, #493629 0%, #342419 52%, #463225 100%);
+  }
+
+  body::after {
+    opacity: 0.12;
+  }
+
+  main {
+    background: #3f2d21;
+  }
+
+  .opening-video {
+    background: #4b392b;
+  }
+
+  .opening-stills img {
+    filter: sepia(0.34) saturate(0.82) brightness(0.8) contrast(1.08) hue-rotate(-8deg);
+  }
+
+  .opening-video::after {
+    background:
+      radial-gradient(circle at 50% 38%, rgba(185, 139, 88, 0.12) 0 18%, rgba(75, 52, 35, 0.42) 72%),
+      linear-gradient(180deg, rgba(155, 112, 70, 0.2), rgba(58, 39, 27, 0.5));
+  }
+
+  .opening-video::before {
+    background: #3a2a1e;
   }
 
   .home {
@@ -858,12 +898,12 @@ body.is-opening main {
   .home-image {
     overflow: hidden;
     background-image:
-      radial-gradient(circle at 50% 43%, rgba(136, 91, 52, 0.24), transparent 36%),
-      radial-gradient(circle at 50% 72%, rgba(122, 75, 42, 0.2), transparent 46%),
-      linear-gradient(180deg, #433024 0%, #302116 52%, #23160f 100%);
+      radial-gradient(circle at 50% 43%, rgba(151, 101, 57, 0.26), transparent 36%),
+      radial-gradient(circle at 50% 72%, rgba(132, 82, 47, 0.22), transparent 46%),
+      linear-gradient(180deg, #4a3628 0%, #37261a 52%, #2a1b12 100%);
     background-position: center;
     background-size: 100% 100%;
-    filter: sepia(0.2) saturate(0.74) brightness(0.74) contrast(1.2) hue-rotate(-9deg);
+    filter: sepia(0.18) saturate(0.86) brightness(0.88) contrast(1.1) hue-rotate(-8deg);
   }
 
   .home-image::before {
@@ -881,11 +921,11 @@ body.is-opening main {
 
   .home-image::after {
     background:
-      radial-gradient(circle at 50% 45%, rgba(126, 83, 45, 0.06) 0 22%, rgba(17, 10, 7, 0.46) 78%),
-      linear-gradient(180deg, rgba(95, 59, 31, 0.22), rgba(16, 10, 7, 0.34)),
+      radial-gradient(circle at 50% 45%, rgba(142, 94, 54, 0.08) 0 22%, rgba(33, 21, 14, 0.34) 78%),
+      linear-gradient(180deg, rgba(110, 73, 43, 0.18), rgba(38, 24, 16, 0.22)),
       radial-gradient(rgba(226, 209, 183, 0.044) 0.7px, transparent 0.7px);
     background-size: 100% 100%, 100% 100%, 4px 4px;
-    opacity: 0.58;
+    opacity: 0.5;
   }
 
   .opening-loader {
@@ -1042,8 +1082,8 @@ body.is-opening main {
     width: min(72vw, 260px);
     height: 178px;
     background:
-      radial-gradient(circle at 50% 0%, rgba(201, 170, 120, 0.08), transparent 70%),
-      rgba(24, 16, 11, 0.28);
+      radial-gradient(circle at 50% 0%, rgba(212, 166, 104, 0.1), transparent 70%),
+      rgba(52, 35, 24, 0.48);
     pointer-events: none;
     transform: translateX(-50%);
     z-index: 1;
@@ -1056,6 +1096,15 @@ body.is-opening main {
     width: min(100% - 42px, 500px);
     scroll-snap-align: start;
     scroll-snap-stop: normal;
+  }
+
+  .story::after,
+  .menu::after,
+  .reservations::after,
+  .contact::after {
+    background:
+      radial-gradient(circle at 50% 34%, rgba(122, 82, 48, 0.14), rgba(40, 27, 18, 0.46) 72%),
+      linear-gradient(180deg, rgba(68, 45, 29, 0.28), rgba(38, 25, 17, 0.38));
   }
 
   .story {
@@ -1083,6 +1132,7 @@ body.is-opening main {
 
   .story p:not(.label),
   .story-copy p:not(.label) {
+    color: rgba(247, 230, 202, 0.86);
     font-size: clamp(0.72rem, 1.95vw, 0.78rem);
     letter-spacing: 0.028em;
     line-height: 1.58;
@@ -1166,6 +1216,7 @@ body.is-opening main {
   .contact-location,
   .reservation-module p:not(.label),
   .reservation-module span {
+    color: rgba(242, 221, 190, 0.78);
     font-size: clamp(0.68rem, 1.9vw, 0.72rem);
     letter-spacing: 0.045em;
     line-height: 1.58;
