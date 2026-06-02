@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="16" fill="#15100d"/>
+  <rect width="64" height="64" rx="16" fill="#1d150f"/>
   <text
     x="32"
     y="51"
@@ -7,6 +7,6 @@
     font-family="Helvetica Neue, Arial, sans-serif"
     font-size="57"
     font-weight="600"
-    fill="#b08a58"
+    fill="#9d7950"
   >Λ</text>
 </svg>
