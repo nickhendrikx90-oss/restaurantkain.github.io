@@ -37,7 +37,7 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg?v=8" />
     <link rel="alternate icon" href="favicon.ico?v=8" sizes="any" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png?v=8" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=10" />
   </head>
   <body class="is-opening">
     <section class="opening-video" aria-label="KΛIN opening film">
@@ -370,14 +370,16 @@
       });
 
       const openingSkip = document.querySelector('.opening-skip');
+      const openingFadeDuration = 2300;
+      let openingFadeTimer;
       const revealSite = (resetToHome = false) => {
         const wasOpening = document.body.classList.contains('is-opening');
         document.body.classList.remove('is-opening');
+        window.clearTimeout(openingFadeTimer);
         if (wasOpening) {
-          document.body.classList.add('is-entering');
-          window.setTimeout(() => {
-            document.body.classList.remove('is-entering');
-          }, 1500);
+          openingFadeTimer = window.setTimeout(() => {
+            document.body.classList.add('opening-done');
+          }, openingFadeDuration);
         }
         if (resetToHome && wasOpening) {
           window.scrollTo({ top: 0, behavior: 'auto' });

@@ -64,12 +64,11 @@ body::after {
 
 body:not(.is-opening) .opening-video {
   opacity: 0;
-  visibility: hidden;
   pointer-events: none;
 }
 
-body.is-entering main {
-  animation: siteArrive 2400ms cubic-bezier(0.18, 0.02, 0.12, 1) both;
+body.opening-done .opening-video {
+  visibility: hidden;
 }
 
 a {
@@ -84,7 +83,9 @@ a {
   z-index: 60;
   overflow: hidden;
   background: #120c08;
-  transition: opacity 3s cubic-bezier(0.18, 0.02, 0.12, 1), visibility 3s cubic-bezier(0.18, 0.02, 0.12, 1);
+  opacity: 1;
+  transition: opacity 2300ms cubic-bezier(0.22, 0.02, 0.16, 1);
+  will-change: opacity;
 }
 
 .opening-skip {
@@ -224,7 +225,6 @@ main {
   min-height: 100svh;
   background: #584737;
   opacity: 1;
-  transition: opacity 2s ease;
 }
 
 main::after {
@@ -239,14 +239,6 @@ main::after {
 
 body.is-changing-section main::after {
   background: rgba(21, 15, 10, 0.16);
-}
-
-body.is-entering main::after {
-  animation: revealVeil 2600ms cubic-bezier(0.18, 0.02, 0.12, 1) both;
-}
-
-body.is-opening main {
-  opacity: 0;
 }
 
 .home {
@@ -290,7 +282,14 @@ body.is-opening main {
   display: block;
   width: auto;
   min-height: auto;
+  opacity: 1;
   pointer-events: none;
+  transition: opacity 2300ms cubic-bezier(0.22, 0.02, 0.16, 1);
+  will-change: opacity;
+}
+
+body.is-opening .home-nav {
+  opacity: 0;
 }
 
 .home-nav > a,
@@ -1472,43 +1471,6 @@ body.is-opening main {
 
   50% {
     opacity: 0.92;
-  }
-}
-
-@keyframes siteArrive {
-  0% {
-    opacity: 0.48;
-    filter: blur(4px) saturate(0.82) brightness(0.62);
-    transform: scale(1.014) translateY(6px);
-  }
-
-  52% {
-    opacity: 0.86;
-    filter: blur(1.2px) saturate(0.94) brightness(0.82);
-  }
-
-  100% {
-    opacity: 1;
-    filter: blur(0) saturate(1) brightness(1);
-    transform: scale(1) translateY(0);
-  }
-}
-
-@keyframes revealVeil {
-  0% {
-    background:
-      radial-gradient(ellipse at 50% 42%, rgba(118, 75, 40, 0.1), rgba(6, 4, 3, 0.68) 78%),
-      rgba(7, 5, 3, 0.44);
-  }
-
-  58% {
-    background:
-      radial-gradient(ellipse at 50% 42%, rgba(118, 75, 40, 0.06), rgba(13, 8, 5, 0.28) 78%),
-      rgba(17, 11, 7, 0.14);
-  }
-
-  100% {
-    background: rgba(21, 15, 10, 0);
   }
 }
 
