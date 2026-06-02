@@ -83,8 +83,8 @@ a {
   inset: 0;
   z-index: 60;
   overflow: hidden;
-  background: #35271d;
-  transition: opacity 2.6s ease, visibility 2.6s ease;
+  background: #120c08;
+  transition: opacity 3s cubic-bezier(0.18, 0.02, 0.12, 1), visibility 3s cubic-bezier(0.18, 0.02, 0.12, 1);
 }
 
 .opening-skip {
@@ -121,7 +121,7 @@ a {
 .opening-stills img {
   display: block;
   object-fit: cover;
-  filter: sepia(0.32) saturate(0.72) brightness(0.6) contrast(1.12) hue-rotate(-9deg);
+  filter: sepia(0.34) saturate(0.66) brightness(0.46) contrast(1.18) hue-rotate(-9deg);
   transform: scale(1.08);
   animation: openingDrift 15s cubic-bezier(0.18, 0.02, 0.12, 1) forwards;
 }
@@ -140,8 +140,8 @@ a {
   inset: 0;
   z-index: 1;
   background:
-    radial-gradient(ellipse at 50% 42%, rgba(196, 150, 92, 0.1) 0 18%, rgba(51, 34, 23, 0.34) 58%, rgba(19, 12, 8, 0.62) 100%),
-    linear-gradient(180deg, rgba(126, 90, 55, 0.14), rgba(36, 24, 16, 0.58));
+    radial-gradient(ellipse at 50% 42%, rgba(183, 132, 78, 0.08) 0 16%, rgba(41, 27, 18, 0.42) 54%, rgba(5, 3, 2, 0.78) 100%),
+    linear-gradient(180deg, rgba(83, 56, 34, 0.1), rgba(9, 6, 4, 0.7));
   animation: openingTension 15s ease-in-out forwards;
 }
 
@@ -151,7 +151,7 @@ a {
   inset: 0;
   z-index: 2;
   pointer-events: none;
-  background: #261a12;
+  background: #090604;
   animation: openingDawn 5.2s ease forwards;
 }
 
@@ -1328,22 +1328,22 @@ body.is-opening main {
 
 @keyframes openingDrift {
   0% {
-    filter: sepia(0.38) saturate(0.58) brightness(0.38) contrast(1.12) hue-rotate(-9deg);
+    filter: sepia(0.38) saturate(0.54) brightness(0.3) contrast(1.18) hue-rotate(-9deg);
     transform: scale(1.09) translate3d(-1.4%, -1.1%, 0);
   }
 
   46% {
-    filter: sepia(0.3) saturate(0.82) brightness(0.68) contrast(1.18) hue-rotate(-8deg);
+    filter: sepia(0.3) saturate(0.76) brightness(0.52) contrast(1.22) hue-rotate(-8deg);
     transform: scale(1.145) translate3d(1.1%, 0.7%, 0);
   }
 
   72% {
-    filter: sepia(0.34) saturate(0.7) brightness(0.54) contrast(1.2) hue-rotate(-8deg);
+    filter: sepia(0.34) saturate(0.66) brightness(0.42) contrast(1.24) hue-rotate(-8deg);
     transform: scale(1.12) translate3d(-0.5%, 1%, 0);
   }
 
   100% {
-    filter: sepia(0.36) saturate(0.68) brightness(0.58) contrast(1.14) hue-rotate(-8deg);
+    filter: sepia(0.36) saturate(0.64) brightness(0.48) contrast(1.18) hue-rotate(-8deg);
     transform: scale(1.14) translate3d(0.7%, -0.5%, 0);
   }
 }
@@ -1369,15 +1369,15 @@ body.is-opening main {
   }
 
   34% {
-    opacity: 0.58;
+    opacity: 0.7;
   }
 
   62% {
-    opacity: 0.24;
+    opacity: 0.42;
   }
 
   100% {
-    opacity: 0.5;
+    opacity: 0.64;
   }
 }
 
@@ -1388,17 +1388,17 @@ body.is-opening main {
   }
 
   42% {
-    opacity: 0.66;
+    opacity: 0.82;
     backdrop-filter: blur(0);
   }
 
   70% {
-    opacity: 0.78;
+    opacity: 0.92;
     backdrop-filter: blur(0.4px);
   }
 
   100% {
-    opacity: 0.7;
+    opacity: 0.84;
     backdrop-filter: blur(0);
   }
 }
@@ -1477,14 +1477,14 @@ body.is-opening main {
 
 @keyframes siteArrive {
   0% {
-    opacity: 0.58;
-    filter: blur(5px) saturate(0.86) brightness(0.82);
-    transform: scale(1.018) translateY(10px);
+    opacity: 0.48;
+    filter: blur(4px) saturate(0.82) brightness(0.62);
+    transform: scale(1.014) translateY(6px);
   }
 
   52% {
-    opacity: 0.9;
-    filter: blur(1.4px) saturate(0.94) brightness(0.94);
+    opacity: 0.86;
+    filter: blur(1.2px) saturate(0.94) brightness(0.82);
   }
 
   100% {
@@ -1497,14 +1497,14 @@ body.is-opening main {
 @keyframes revealVeil {
   0% {
     background:
-      radial-gradient(ellipse at 50% 42%, rgba(128, 82, 45, 0.18), rgba(21, 13, 8, 0.46) 78%),
-      rgba(31, 20, 13, 0.28);
+      radial-gradient(ellipse at 50% 42%, rgba(118, 75, 40, 0.1), rgba(6, 4, 3, 0.68) 78%),
+      rgba(7, 5, 3, 0.44);
   }
 
   58% {
     background:
-      radial-gradient(ellipse at 50% 42%, rgba(128, 82, 45, 0.06), rgba(21, 13, 8, 0.18) 78%),
-      rgba(31, 20, 13, 0.08);
+      radial-gradient(ellipse at 50% 42%, rgba(118, 75, 40, 0.06), rgba(13, 8, 5, 0.28) 78%),
+      rgba(17, 11, 7, 0.14);
   }
 
   100% {
