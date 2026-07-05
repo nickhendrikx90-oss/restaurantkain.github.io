@@ -191,6 +191,63 @@ a {
   animation: loadingText 3.8s ease-in-out infinite;
 }
 
+.opening-hint {
+  color: rgba(240, 226, 197, 0.72);
+  font-size: clamp(0.56rem, 0.92vw, 0.68rem);
+  letter-spacing: 0.34em;
+  opacity: 0.7;
+  text-transform: uppercase;
+  order: 3;
+}
+
+.opening-leaf {
+  position: absolute;
+  z-index: 1;
+  width: min(26vw, 240px);
+  height: min(26vw, 240px);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(195, 154, 96, 0.14), transparent 60%);
+  pointer-events: none;
+  filter: blur(0.6px);
+  opacity: 0.16;
+}
+
+.opening-leaf--one {
+  left: 12%;
+  top: -14%;
+  animation: leafFloatOne 19s ease-in-out infinite;
+}
+
+.opening-leaf--two {
+  right: 18%;
+  top: 4%;
+  animation: leafFloatTwo 16s ease-in-out infinite reverse;
+}
+
+.opening-leaf--three {
+  left: 42%;
+  top: 8%;
+  animation: leafFloatThree 21s ease-in-out infinite;
+}
+
+@keyframes leafFloatOne {
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 0.16; }
+  50% { transform: translate(6vw, 38vh) rotate(16deg); opacity: 0.24; }
+  100% { transform: translate(12vw, 92vh) rotate(42deg); opacity: 0.12; }
+}
+
+@keyframes leafFloatTwo {
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 0.12; }
+  50% { transform: translate(-8vw, 42vh) rotate(-18deg); opacity: 0.2; }
+  100% { transform: translate(-14vw, 96vh) rotate(-46deg); opacity: 0.1; }
+}
+
+@keyframes leafFloatThree {
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 0.18; }
+  50% { transform: translate(3vw, 35vh) rotate(9deg); opacity: 0.22; }
+  100% { transform: translate(9vw, 90vh) rotate(28deg); opacity: 0.1; }
+}
+
 .language-switch button {
   padding: 0 0 9px;
   border: 0;
@@ -219,6 +276,15 @@ a {
 
 .language-switch button:hover {
   color: rgba(255, 242, 218, 0.96);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 main {
