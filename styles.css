@@ -862,28 +862,41 @@ body.is-opening .home-nav {
   width: min(100%, 360px);
   min-height: 96px;
   margin: 0 auto;
-  gap: 10px;
+  gap: 16px;
   align-content: center;
   padding: 20px;
   border: 0;
   background: rgba(23, 16, 11, 0.05);
 }
 
-.reservation-module p:not(.label) {
-  margin: 0;
-  color: rgba(250, 235, 210, 0.82);
+.reservation-link {
+  display: inline-grid;
+  min-height: 44px;
+  padding: 14px 22px;
+  align-items: center;
+  justify-self: center;
+  border: 1px solid rgba(238, 219, 190, 0.42);
+  color: rgba(255, 240, 215, 0.92);
   font-size: clamp(0.7rem, 0.76vw, 0.78rem);
   font-weight: 300;
-  letter-spacing: 0.11em;
+  letter-spacing: 0.16em;
+  line-height: 1.2;
   text-transform: uppercase;
+  transition:
+    border-color 420ms ease,
+    background 420ms ease,
+    color 420ms ease,
+    opacity 420ms ease;
 }
 
-.reservation-module span {
-  color: rgba(238, 219, 190, 0.62);
-  font-size: clamp(0.7rem, 0.76vw, 0.78rem);
-  font-weight: 300;
-  letter-spacing: 0.11em;
-  text-transform: uppercase;
+.reservation-link:hover {
+  border-color: rgba(255, 240, 215, 0.74);
+  background: rgba(255, 240, 215, 0.06);
+  color: rgba(255, 245, 226, 0.98);
+}
+
+.reservation-link:active {
+  opacity: 0.62;
 }
 
 .story-copy .label,
@@ -1329,12 +1342,17 @@ body.is-opening .home-nav {
   .contact-details,
   .opening-hours span,
   .contact-location,
-  .reservation-module p:not(.label),
-  .reservation-module span {
+  .reservation-link {
     color: rgba(242, 221, 190, 0.78);
     font-size: clamp(0.68rem, 1.9vw, 0.72rem);
     letter-spacing: 0.045em;
     line-height: 1.58;
+  }
+
+  .reservation-link {
+    min-height: 42px;
+    padding: 12px 18px;
+    letter-spacing: 0.1em;
   }
 
   .opening-service-times {
