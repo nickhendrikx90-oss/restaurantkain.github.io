@@ -870,29 +870,44 @@ body.is-opening .home-nav {
 }
 
 .reservation-link {
-  display: inline-grid;
-  min-height: 44px;
-  padding: 14px 22px;
-  align-items: center;
+  position: relative;
+  display: inline-block;
+  min-height: auto;
+  padding: 0 0 10px;
   justify-self: center;
-  border: 1px solid rgba(238, 219, 190, 0.42);
-  color: rgba(255, 240, 215, 0.92);
-  font-size: clamp(0.7rem, 0.76vw, 0.78rem);
+  border: 0;
+  color: rgba(248, 232, 204, 0.86);
+  font-size: 0.58rem;
   font-weight: 300;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.54em;
   line-height: 1.2;
+  padding-left: 0.54em;
   text-transform: uppercase;
   transition:
-    border-color 420ms ease,
-    background 420ms ease,
     color 420ms ease,
     opacity 420ms ease;
 }
 
+.reservation-link::after {
+  content: '';
+  position: absolute;
+  left: 0.27em;
+  bottom: 0;
+  width: calc(100% - 0.54em);
+  height: 1px;
+  background: rgba(229, 211, 184, 0.44);
+  transition:
+    background 420ms ease,
+    width 520ms ease;
+}
+
 .reservation-link:hover {
-  border-color: rgba(255, 240, 215, 0.74);
-  background: rgba(255, 240, 215, 0.06);
-  color: rgba(255, 245, 226, 0.98);
+  color: rgba(255, 242, 218, 0.96);
+}
+
+.reservation-link:hover::after {
+  width: calc(100% - 0.27em);
+  background: rgba(255, 240, 215, 0.74);
 }
 
 .reservation-link:active {
@@ -1341,8 +1356,7 @@ body.is-opening .home-nav {
   .contact-note,
   .contact-details,
   .opening-hours span,
-  .contact-location,
-  .reservation-link {
+  .contact-location {
     color: rgba(242, 221, 190, 0.78);
     font-size: clamp(0.68rem, 1.9vw, 0.72rem);
     letter-spacing: 0.045em;
@@ -1350,9 +1364,18 @@ body.is-opening .home-nav {
   }
 
   .reservation-link {
-    min-height: 42px;
-    padding: 12px 18px;
-    letter-spacing: 0.1em;
+    min-height: auto;
+    padding: 0 0 9px;
+    color: rgba(248, 232, 204, 0.86);
+    font-size: 0.5rem;
+    letter-spacing: 0.16em;
+    line-height: 1.2;
+    padding-left: 0.16em;
+  }
+
+  .reservation-link::after {
+    left: 0.08em;
+    width: calc(100% - 0.16em);
   }
 
   .opening-service-times {
