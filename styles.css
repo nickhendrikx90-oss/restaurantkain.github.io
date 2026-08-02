@@ -795,6 +795,7 @@ body.is-opening .home-nav {
   opacity: 0.58;
 }
 
+.contact-group,
 .opening-hours,
 .contact-address {
   display: grid;
@@ -804,7 +805,7 @@ body.is-opening .home-nav {
   margin: 0 auto;
 }
 
-.contact > .label,
+.contact-group > .label,
 .opening-hours > p,
 .contact-address > .label {
   margin: 0 0 8px;
@@ -922,7 +923,7 @@ body.is-opening .home-nav {
 .reservation-prices .label,
 .reservation-information .label,
 .reservation-module .label,
-.contact > .label {
+.contact-group > .label {
   padding-left: 0.54em;
 }
 
@@ -1056,7 +1057,7 @@ body.is-opening .home-nav {
 
   .home-nav a,
   .label,
-  .contact > .label,
+  .contact-group > .label,
   .opening-hours > p,
   .contact-address > .label {
     font-size: 0.5rem;
@@ -1071,7 +1072,7 @@ body.is-opening .home-nav {
   .reservation-prices .label,
   .reservation-information .label,
   .reservation-module .label,
-  .contact > .label,
+  .contact-group > .label,
   .opening-hours > p,
   .contact-address > .label {
     padding-left: 0.16em;
