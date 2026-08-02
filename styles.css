@@ -1055,7 +1055,8 @@ body.is-opening .home-nav {
 
   .home-nav a,
   .label,
-  .opening-hours p {
+  .opening-hours > p,
+  .contact-address > .label {
     font-size: 0.5rem;
     letter-spacing: 0.16em;
   }
@@ -1069,7 +1070,8 @@ body.is-opening .home-nav {
   .reservation-information .label,
   .reservation-module .label,
   .contact > .label,
-  .opening-hours p {
+  .opening-hours > p,
+  .contact-address > .label {
     padding-left: 0.16em;
   }
 
