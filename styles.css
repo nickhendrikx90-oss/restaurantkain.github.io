@@ -622,12 +622,6 @@ body.is-opening .home-nav {
   padding-left: 1.08em;
 }
 
-.menu-heading .label {
-  font-size: clamp(0.64rem, 0.86vw, 0.78rem);
-  letter-spacing: 0.62em;
-  padding-left: 0.62em;
-}
-
 .menu-list {
   display: grid;
   gap: clamp(8px, 1.05vw, 12px);
@@ -805,6 +799,7 @@ body.is-opening .home-nav {
   margin: 0 auto;
 }
 
+.menu-heading .label,
 .contact-group > .label,
 .opening-hours > p,
 .contact-address > .label {
@@ -815,6 +810,10 @@ body.is-opening .home-nav {
   letter-spacing: 0.54em;
   padding-left: 0.54em;
   text-transform: uppercase;
+}
+
+.menu-heading .label {
+  font-size: clamp(0.64rem, 0.86vw, 0.78rem);
 }
 
 .opening-hours span {
@@ -920,6 +919,7 @@ body.is-opening .home-nav {
 }
 
 .story-copy .label,
+.menu-heading .label,
 .reservation-prices .label,
 .reservation-information .label,
 .reservation-module .label,
@@ -1057,6 +1057,7 @@ body.is-opening .home-nav {
 
   .home-nav a,
   .label,
+  .menu-heading .label,
   .contact-group > .label,
   .opening-hours > p,
   .contact-address > .label {
@@ -1069,6 +1070,7 @@ body.is-opening .home-nav {
   }
 
   .story-copy .label,
+  .menu-heading .label,
   .reservation-prices .label,
   .reservation-information .label,
   .reservation-module .label,
@@ -1316,12 +1318,6 @@ body.is-opening .home-nav {
     font-size: 0.9rem;
     letter-spacing: 0.58em;
     padding-left: 0.58em;
-  }
-
-  .menu-heading .label {
-    font-size: 0.58rem;
-    letter-spacing: 0.34em;
-    padding-left: 0.34em;
   }
 
   .menu-list {
