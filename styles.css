@@ -779,8 +779,9 @@ body.is-opening .home-nav {
 
 .contact-details {
   display: grid;
+  width: min(100%, 480px);
   gap: 4px;
-  margin: 0;
+  margin: 0 auto;
   font-style: normal;
   justify-items: center;
 }
@@ -804,11 +805,11 @@ body.is-opening .home-nav {
 
 .opening-hours p {
   margin: 0 0 8px;
-  color: rgba(238, 219, 190, 0.68);
-  font-size: 0.46rem;
+  color: rgba(248, 232, 204, 0.86);
+  font-size: 0.58rem;
   font-weight: 300;
-  letter-spacing: 0.42em;
-  padding-left: 0.42em;
+  letter-spacing: 0.54em;
+  padding-left: 0.54em;
   text-transform: uppercase;
 }
 
@@ -1051,7 +1052,8 @@ body.is-opening .home-nav {
   }
 
   .home-nav a,
-  .label {
+  .label,
+  .opening-hours p {
     font-size: 0.5rem;
     letter-spacing: 0.16em;
   }
@@ -1064,7 +1066,8 @@ body.is-opening .home-nav {
   .reservation-prices .label,
   .reservation-information .label,
   .reservation-module .label,
-  .contact > .label {
+  .contact > .label,
+  .opening-hours p {
     padding-left: 0.16em;
   }
 
