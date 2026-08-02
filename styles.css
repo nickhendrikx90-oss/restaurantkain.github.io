@@ -804,6 +804,7 @@ body.is-opening .home-nav {
   margin: 0 auto;
 }
 
+.contact > .label,
 .opening-hours > p,
 .contact-address > .label {
   margin: 0 0 8px;
@@ -1055,6 +1056,7 @@ body.is-opening .home-nav {
 
   .home-nav a,
   .label,
+  .contact > .label,
   .opening-hours > p,
   .contact-address > .label {
     font-size: 0.5rem;
