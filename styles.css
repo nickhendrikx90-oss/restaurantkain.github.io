@@ -795,7 +795,8 @@ body.is-opening .home-nav {
   opacity: 0.58;
 }
 
-.opening-hours {
+.opening-hours,
+.contact-address {
   display: grid;
   width: min(100%, 480px);
   gap: 4px;
@@ -803,7 +804,8 @@ body.is-opening .home-nav {
   margin: 0 auto;
 }
 
-.opening-hours p {
+.opening-hours > p,
+.contact-address > .label {
   margin: 0 0 8px;
   color: rgba(248, 232, 204, 0.86);
   font-size: 0.58rem;
@@ -826,7 +828,7 @@ body.is-opening .home-nav {
 
 .contact-location {
   display: inline-block;
-  margin: clamp(8px, 1.8vw, 18px) 0 0;
+  margin: 0;
   color: rgba(246, 231, 206, 0.84);
   transition: opacity 420ms ease;
 }
