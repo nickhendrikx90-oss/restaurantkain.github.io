@@ -874,25 +874,6 @@ body.is-opening .home-nav {
   backdrop-filter: blur(2px);
 }
 
-.reservation-widget-wrap {
-  width: 100%;
-  display: block;
-}
-
-.reservation-widget-wrap #tebi,
-.reservation-widget-wrap iframe,
-.reservation-widget-wrap > * {
-  display: block;
-  width: 100% !important;
-  max-width: 100%;
-  border: 0;
-}
-
-.reservation-widget-wrap iframe {
-  min-height: 420px;
-  border-radius: 16px;
-  background: rgba(17, 11, 8, 0.28);
-}
 
 .reservation-link {
   position: relative;
