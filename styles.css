@@ -26,6 +26,13 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+h1,
+h2,
+h3 {
+  margin: 0;
+  font: inherit;
+}
+
 html,
 body {
   min-height: 100%;
@@ -186,7 +193,7 @@ a {
   order: 2;
 }
 
-.opening-loader span {
+.opening-loader h1 {
   order: 1;
   animation: loadingText 3.8s ease-in-out infinite;
 }
@@ -757,7 +764,7 @@ body.is-opening .home-nav {
   justify-items: center;
 }
 
-.reservation-prices p {
+.reservation-prices h3 {
   margin: 0;
 }
 
