@@ -203,7 +203,7 @@
           <span data-i18n="contact.openingThree">Friday</span>
           <span data-i18n="contact.openingFour">Saturday</span>
           <span class="opening-service-times" data-i18n="contact.openingTimes">
-            Dinner from 18:00
+            Dinner from 17:30
           </span>
         </div>
         <div class="contact-address">
@@ -288,7 +288,7 @@
           'contact.openingTwo': 'Thursday',
           'contact.openingThree': 'Friday',
           'contact.openingFour': 'Saturday',
-          'contact.openingTimes': 'Dinner from 18:00',
+          'contact.openingTimes': 'Dinner from 17:30',
           'contact.note': 'For general enquiries, please send us an email.'
         },
         nl: {
@@ -336,7 +336,7 @@
           'contact.openingTwo': 'Donderdag',
           'contact.openingThree': 'Vrijdag',
           'contact.openingFour': 'Zaterdag',
-          'contact.openingTimes': 'Diner vanaf 18:00',
+          'contact.openingTimes': 'Diner vanaf 17:30',
           'contact.note': 'Voor algemene vragen kunt u ons altijd een e-mail sturen.'
         }
       };
@@ -347,6 +347,22 @@
       const translatable = document.querySelectorAll('[data-i18n]');
       const homeNav = document.querySelector('.home-nav');
       const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+
+      const getStoredLanguage = () => {
+        try {
+          return localStorage.getItem('kain-language') || 'en';
+        } catch (error) {
+          return 'en';
+        }
+      };
+
+      const saveStoredLanguage = (language) => {
+        try {
+          localStorage.setItem('kain-language', language);
+        } catch (error) {
+          // Ignore storage restrictions in embedded browsers such as Instagram Android.
+        }
+      };
 
       const setLanguage = (language) => {
         const dictionary = translations[language] || translations.en;
@@ -371,10 +387,10 @@
           );
         });
 
-        localStorage.setItem('kain-language', language);
+        saveStoredLanguage(language);
       };
 
-      setLanguage(localStorage.getItem('kain-language') || 'en');
+      setLanguage(getStoredLanguage());
 
       languageToggles.forEach((toggle) => {
         toggle.addEventListener('click', (event) => {
@@ -385,22 +401,24 @@
         });
       });
 
-      mobileMenuToggle.addEventListener('click', () => {
-        const isOpen = homeNav.classList.toggle('is-open');
-        mobileMenuToggle.setAttribute('aria-expanded', String(isOpen));
-        mobileMenuToggle.setAttribute(
-          'aria-label',
-          isOpen ? 'Close navigation' : 'Open navigation'
-        );
-      });
-
-      homeNav.querySelectorAll('a').forEach((link) => {
-        link.addEventListener('click', () => {
-          homeNav.classList.remove('is-open');
-          mobileMenuToggle.setAttribute('aria-expanded', 'false');
-          mobileMenuToggle.setAttribute('aria-label', 'Open navigation');
+      if (mobileMenuToggle && homeNav) {
+        mobileMenuToggle.addEventListener('click', () => {
+          const isOpen = homeNav.classList.toggle('is-open');
+          mobileMenuToggle.setAttribute('aria-expanded', String(isOpen));
+          mobileMenuToggle.setAttribute(
+            'aria-label',
+            isOpen ? 'Close navigation' : 'Open navigation'
+          );
         });
-      });
+
+        homeNav.querySelectorAll('a').forEach((link) => {
+          link.addEventListener('click', () => {
+            homeNav.classList.remove('is-open');
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            mobileMenuToggle.setAttribute('aria-label', 'Open navigation');
+          });
+        });
+      }
 
       const openingSkip = document.querySelector('.opening-skip');
       const revealSite = (resetToHome = false) => {
@@ -419,10 +437,16 @@
         }, 1800);
       };
 
-      openingSkip.addEventListener('pointerup', () => {
-        revealSite(true);
-      });
-      window.setTimeout(() => revealSite(false), 10000);
+      if (openingSkip) {
+        openingSkip.addEventListener('pointerup', () => {
+          revealSite(true);
+        });
+        openingSkip.addEventListener('click', () => {
+          revealSite(true);
+        });
+      }
+
+      window.setTimeout(() => revealSite(false), 3000);
 
       const sections = document.querySelectorAll(
         '.home, .story, .menu, .reservations, .contact'
