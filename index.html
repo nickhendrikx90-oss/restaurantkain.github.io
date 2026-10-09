@@ -39,7 +39,7 @@
     <link rel="icon" type="image/svg+xml" href="/kain-favicon.svg?v=5" />
     <link rel="icon" type="image/png" href="/kain-favicon.png?v=3" />
     <link rel="apple-touch-icon" href="/kain-favicon.png?v=3" />
-    <link rel="stylesheet" href="styles.css?v=14" />
+    <link rel="stylesheet" href="styles.css?v=15" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -70,8 +70,26 @@
         <img src="ginkgo-forest-opening.png" alt="" />
         <img src="opening-shadow.png" alt="" />
       </div>
+      <div class="opening-rays" aria-hidden="true"></div>
+      <div class="opening-bloom" aria-hidden="true"></div>
+      <div class="opening-motes" aria-hidden="true">
+        <i style="--x: 8%; --y: 78%; --s: 3px; --dx: 5vw; --d: 11s; --t: -1s"></i>
+        <i style="--x: 17%; --y: 52%; --s: 2px; --dx: -3vw; --d: 14s; --t: -6s"></i>
+        <i style="--x: 26%; --y: 88%; --s: 5px; --dx: 6vw; --d: 12s; --t: -3s"></i>
+        <i style="--x: 34%; --y: 64%; --s: 2px; --dx: 2vw; --d: 16s; --t: -9s"></i>
+        <i style="--x: 41%; --y: 92%; --s: 3px; --dx: -4vw; --d: 10s; --t: -4s"></i>
+        <i style="--x: 48%; --y: 70%; --s: 4px; --dx: 3vw; --d: 13s; --t: -7s"></i>
+        <i style="--x: 55%; --y: 84%; --s: 2px; --dx: -2vw; --d: 15s; --t: -2s"></i>
+        <i style="--x: 62%; --y: 58%; --s: 3px; --dx: 4vw; --d: 12s; --t: -10s"></i>
+        <i style="--x: 69%; --y: 90%; --s: 6px; --dx: -5vw; --d: 14s; --t: -5s"></i>
+        <i style="--x: 76%; --y: 66%; --s: 2px; --dx: 3vw; --d: 11s; --t: -8s"></i>
+        <i style="--x: 83%; --y: 82%; --s: 3px; --dx: -3vw; --d: 13s; --t: -1.5s"></i>
+        <i style="--x: 91%; --y: 60%; --s: 4px; --dx: -6vw; --d: 16s; --t: -11s"></i>
+        <i style="--x: 13%; --y: 96%; --s: 2px; --dx: 4vw; --d: 12s; --t: -6.5s"></i>
+        <i style="--x: 58%; --y: 98%; --s: 5px; --dx: 2vw; --d: 15s; --t: -12s"></i>
+      </div>
       <div class="opening-loader" aria-hidden="true">
-        <h1>KΛIN</h1>
+        <h1><span>K</span><span>Λ</span><span>I</span><span>N</span></h1>
       </div>
     </section>
 
@@ -462,7 +480,7 @@
         });
       }
 
-      window.setTimeout(() => revealSite(false), 3000);
+      window.setTimeout(() => revealSite(false), 10000);
 
       const sections = document.querySelectorAll(
         '.home, .story, .menu, .reservations, .contact'
