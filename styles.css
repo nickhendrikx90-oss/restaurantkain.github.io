@@ -510,10 +510,9 @@ body.is-opening .home-nav {
 }
 
 .home-nav .nav-contact {
-  left: 50%;
+  right: 0;
   bottom: 0;
   top: auto;
-  transform: translateX(-50%);
 }
 
 .home-nav a,
@@ -1050,6 +1049,61 @@ body.is-opening .home-nav {
 .impression-close:focus-visible {
   outline: 1px solid rgba(255, 238, 210, 0.42);
   outline-offset: 2px;
+}
+
+.reserve-float {
+  position: fixed;
+  right: calc(16px + env(safe-area-inset-right, 0px));
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  z-index: 10010;
+  padding: 15px 24px 14px;
+  border-radius: 999px;
+  background: rgba(201, 170, 120, 0.96);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  color: #17100b;
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.24em;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition:
+    opacity 600ms ease,
+    transform 600ms ease,
+    background 300ms ease;
+}
+
+body.tebi-ready:not(.tebi-open) .reserve-float {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.reserve-float:hover,
+.reserve-float:focus-visible {
+  background: rgba(216, 187, 140, 0.98);
+}
+
+.reserve-float:focus-visible {
+  outline: 1px solid rgba(255, 238, 210, 0.7);
+  outline-offset: 3px;
+}
+
+@media (min-width: 761px) {
+  body.tebi-ready.on-home .reserve-float {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(12px);
+  }
+}
+
+#tebi_rs_01:not(.kain-open) {
+  opacity: 0 !important;
+  pointer-events: none !important;
 }
 
 @keyframes lightboxIn {
@@ -1852,8 +1906,7 @@ body.is-opening .home-nav {
     filter: none;
   }
 
-  .js-ready .home-nav .nav-menu,
-  .js-ready .home-nav .nav-contact {
+  .js-ready .home-nav .nav-menu {
     transform: translateX(-50%);
   }
 }

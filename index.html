@@ -39,7 +39,7 @@
     <link rel="icon" type="image/svg+xml" href="/kain-favicon.svg?v=5" />
     <link rel="icon" type="image/png" href="/kain-favicon.png?v=3" />
     <link rel="apple-touch-icon" href="/kain-favicon.png?v=3" />
-    <link rel="stylesheet" href="styles.css?v=24" />
+    <link rel="stylesheet" href="styles.css?v=27" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -380,6 +380,8 @@
       </section>
     </main>
 
+    <a class="reserve-float" href="#tebi-reservations" data-i18n="reservations.widget">Reserve your seat</a>
+
     <script>
       document.documentElement.classList.add('js-ready');
       if ('scrollRestoration' in window.history) {
@@ -579,6 +581,49 @@
         );
         tebiScript.setAttribute('data-no-minify', '1');
         document.body.appendChild(tebiScript);
+        watchTebiWidget();
+      };
+
+      window.addEventListener('message', (event) => {
+        if (event.origin !== 'https://live.tebi.co') {
+          return;
+        }
+        let message = event.data;
+        try {
+          message = typeof message === 'string' ? JSON.parse(message) : message;
+        } catch (error) {
+          return;
+        }
+        if (message && message.type === 'appear') {
+          document.body.classList.add('tebi-ready');
+        }
+      });
+
+      const homeSection = document.querySelector('.home');
+      if (homeSection) {
+        new IntersectionObserver(
+          ([entry]) => {
+            document.body.classList.toggle('on-home', entry.intersectionRatio > 0.5);
+          },
+          { threshold: [0, 0.5, 1] }
+        ).observe(homeSection);
+      }
+
+      const watchTebiWidget = (attempt = 0) => {
+        const tebiFrame = document.getElementById('tebi_rs_01');
+        if (!tebiFrame) {
+          if (attempt < 80) {
+            window.setTimeout(() => watchTebiWidget(attempt + 1), 250);
+          }
+          return;
+        }
+        const syncTebiState = () => {
+          const isOpen = tebiFrame.offsetHeight > 60;
+          tebiFrame.classList.toggle('kain-open', isOpen);
+          document.body.classList.toggle('tebi-open', isOpen);
+        };
+        new ResizeObserver(syncTebiState).observe(tebiFrame);
+        syncTebiState();
       };
 
       const openingSkip = document.querySelector('.opening-skip');
