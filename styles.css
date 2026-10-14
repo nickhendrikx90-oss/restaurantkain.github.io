@@ -247,8 +247,8 @@ body:not(.is-opening) .opening-stills {
   gap: 20px;
   --track: 1.08em;
   color: rgba(255, 240, 215, 0.94);
-  font-size: clamp(1.4rem, 2.3vw, 2.2rem);
-  font-weight: 400;
+  font-size: clamp(1.65rem, 2.8vw, 2.7rem);
+  font-weight: 200;
   letter-spacing: 0;
   padding-left: 0;
   text-transform: uppercase;
@@ -573,6 +573,7 @@ body.is-opening .home-nav {
 
 .story,
 .menu,
+.impressions,
 .reservations,
 .contact {
   position: relative;
@@ -581,6 +582,7 @@ body.is-opening .home-nav {
 
 .story::before,
 .menu::before,
+.impressions::before,
 .reservations::before,
 .contact::before {
   content: '';
@@ -595,6 +597,7 @@ body.is-opening .home-nav {
 
 .story::after,
 .menu::after,
+.impressions::after,
 .reservations::after,
 .contact::after {
   content: '';
@@ -608,6 +611,7 @@ body.is-opening .home-nav {
 
 .story::before,
 .menu::before,
+.impressions::before,
 .reservations::before,
 .contact::before {
   transform: scale(1.025);
@@ -616,6 +620,7 @@ body.is-opening .home-nav {
 
 .story.is-visible::before,
 .menu.is-visible::before,
+.impressions.is-visible::before,
 .reservations.is-visible::before,
 .contact.is-visible::before {
   transform: scale(1);
@@ -817,6 +822,244 @@ body.is-opening .home-nav {
 
 .js-ready .story.is-visible > *:nth-child(5) {
   transition-delay: 420ms;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.impressions {
+  width: 100%;
+  height: 210svh;
+  margin: 0;
+  scroll-snap-align: start;
+}
+
+.impressions-field {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.impression {
+  --drift: 0px;
+  position: absolute;
+  margin: 0;
+  transform: translate3d(0, var(--drift), 0);
+  will-change: transform;
+}
+
+.impression--entree {
+  left: 5%;
+  top: 2.1%;
+  width: min(38vw, 60.8svh);
+}
+
+.impression--menu {
+  left: 45%;
+  top: 8.5%;
+  width: min(22vw, 35.2svh);
+}
+
+.impression--jars {
+  right: 5%;
+  top: 14.8%;
+  width: min(18vw, 28.8svh);
+}
+
+.impression--dish {
+  left: 8%;
+  top: 25.5%;
+  width: min(28vw, 44.8svh);
+}
+
+.impression--bite {
+  right: 5%;
+  top: 36.1%;
+  width: min(33vw, 52.8svh);
+}
+
+.impression--table {
+  left: 36%;
+  top: 47.8%;
+  width: min(25vw, 40.0svh);
+}
+
+.impression--lechon {
+  left: 5%;
+  top: 63.1%;
+  width: min(36vw, 57.6svh);
+}
+
+.impression--wine {
+  right: 8%;
+  top: 69.4%;
+  width: min(27vw, 43.2svh);
+}
+
+.impression-open {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  background: rgba(23, 16, 11, 0.3);
+  box-shadow: 0 30px 70px rgba(8, 5, 3, 0.42);
+  cursor: zoom-in;
+  opacity: 0;
+  filter: blur(12px);
+  transform: translate3d(0, 70px, 0) scale(0.96);
+  transition:
+    opacity 1900ms ease,
+    filter 1900ms ease,
+    transform 2200ms cubic-bezier(0.22, 0.02, 0.16, 1);
+}
+
+.impression.is-visible .impression-open {
+  opacity: 1;
+  filter: blur(0);
+  transform: translate3d(0, 0, 0) scale(1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.impression-open::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 40%, transparent 0 40%, rgba(31, 22, 15, 0.22) 100%),
+    linear-gradient(180deg, rgba(84, 62, 39, 0.04), rgba(31, 22, 15, 0.14));
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.impression img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  filter: sepia(0.12) saturate(0.84) brightness(0.9) hue-rotate(-6deg);
+  transform: scale(1.01);
+  transition:
+    transform 1600ms cubic-bezier(0.22, 0.02, 0.16, 1),
+    filter 900ms ease;
+}
+
+.impression--menu img {
+  aspect-ratio: 2 / 3;
+}
+
+.impression--dish img {
+  aspect-ratio: 1 / 1;
+}
+
+.impression--jars img {
+  aspect-ratio: 4 / 5;
+}
+
+.impression--bite img {
+  aspect-ratio: 4 / 3;
+}
+
+.impression--wine img {
+  aspect-ratio: 4 / 5;
+}
+
+.impression--menu img {
+  object-position: 47% center;
+}
+
+.impression--jars img {
+  object-position: 47% center;
+}
+
+.impression--wine img {
+  object-position: 60% center;
+}
+
+.impression-open:hover img,
+.impression-open:focus-visible img {
+  filter: sepia(0.06) saturate(0.92) brightness(1) hue-rotate(-4deg);
+  transform: scale(1.045);
+}
+
+.impression-open:focus-visible {
+  outline: 1px solid rgba(255, 238, 210, 0.7);
+  outline-offset: 4px;
+}
+
+.impression-lightbox {
+  width: 100vw;
+  max-width: none;
+  height: 100vh;
+  max-height: none;
+  margin: 0;
+  padding: clamp(16px, 4vw, 56px);
+  border: 0;
+  background: transparent;
+  cursor: zoom-out;
+}
+
+.impression-lightbox[open] {
+  display: grid;
+  place-items: center;
+  animation: lightboxIn 600ms ease both;
+}
+
+.impression-lightbox::backdrop {
+  background: rgba(12, 8, 5, 0.92);
+}
+
+.impression-lightbox img {
+  display: block;
+  max-width: 100%;
+  max-height: calc(100vh - 2 * clamp(16px, 4vw, 56px));
+  object-fit: contain;
+  filter: sepia(0.06) saturate(0.92) hue-rotate(-4deg);
+}
+
+.impression-close {
+  position: fixed;
+  top: clamp(10px, 2vw, 24px);
+  right: clamp(14px, 2.4vw, 30px);
+  padding: 4px 8px;
+  border: 0;
+  background: transparent;
+  color: rgba(255, 240, 215, 0.84);
+  font: inherit;
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.impression-close:focus {
+  outline: none;
+}
+
+.impression-close:focus-visible {
+  outline: 1px solid rgba(255, 238, 210, 0.42);
+  outline-offset: 2px;
+}
+
+@keyframes lightboxIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .reservations {
@@ -1162,7 +1405,7 @@ body.is-opening .home-nav {
     top: 47%;
     gap: 20px;
     --track: 0.82em;
-    font-size: 1.4rem;
+    font-size: 1.65rem;
     padding-left: 0;
     transform: translate(-50%, -50%);
   }
@@ -1382,11 +1625,73 @@ body.is-opening .home-nav {
 
   .story::after,
   .menu::after,
+  .impressions::after,
   .reservations::after,
   .contact::after {
     background:
       radial-gradient(circle at 50% 34%, rgba(139, 91, 52, 0.16), rgba(45, 30, 20, 0.38) 72%),
       linear-gradient(180deg, rgba(76, 50, 32, 0.24), rgba(45, 30, 20, 0.3));
+  }
+
+  .impressions {
+    width: 100%;
+    height: 190svh;
+  }
+
+  .impression--entree {
+    left: 4%;
+    right: auto;
+    top: 1.9%;
+    width: 84vw;
+  }
+
+  .impression--menu {
+    right: 4%;
+    left: auto;
+    top: 17.0%;
+    width: 44vw;
+  }
+
+  .impression--dish {
+    left: 4%;
+    right: auto;
+    top: 19.5%;
+    width: 44vw;
+  }
+
+  .impression--jars {
+    left: 4%;
+    right: auto;
+    top: 31.7%;
+    width: 38vw;
+  }
+
+  .impression--table {
+    right: 4%;
+    left: auto;
+    top: 34.5%;
+    width: 50vw;
+  }
+
+  .impression--bite {
+    left: 4%;
+    right: auto;
+    top: 44.7%;
+    width: 78vw;
+  }
+
+  .impression--lechon {
+    right: 4%;
+    left: auto;
+    top: 60.5%;
+    width: 88vw;
+  }
+
+  .impression--wine {
+    left: 6%;
+    right: auto;
+    top: 76.2%;
+    width: 64vw;
   }
 
   .story {
@@ -1537,6 +1842,7 @@ body.is-opening .home-nav {
   }
 
   .js-ready .home-nav a,
+  .impression-open,
   .js-ready .story > *,
   .js-ready .menu > *,
   .js-ready .reservations > *,
@@ -1737,7 +2043,7 @@ body.is-opening .home-nav {
   }
 
   50% {
-    text-shadow: 0 0 26px rgba(255, 214, 156, 0.55);
+    text-shadow: 0 0 22px rgba(255, 214, 156, 0.3);
   }
 }
 

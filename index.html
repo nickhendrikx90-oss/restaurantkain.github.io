@@ -39,7 +39,7 @@
     <link rel="icon" type="image/svg+xml" href="/kain-favicon.svg?v=5" />
     <link rel="icon" type="image/png" href="/kain-favicon.png?v=3" />
     <link rel="apple-touch-icon" href="/kain-favicon.png?v=3" />
-    <link rel="stylesheet" href="styles.css?v=17" />
+    <link rel="stylesheet" href="styles.css?v=24" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -94,6 +94,124 @@
     </section>
 
     <main>
+      <section class="impressions" id="impressions" aria-labelledby="impressions-label">
+        <h2 class="visually-hidden" id="impressions-label" data-i18n="impressions.label">Impressions</h2>
+        <div class="impressions-field">
+          <figure class="impression impression--entree" data-speed="-0.1">
+            <button class="impression-open" type="button" data-full="impressies/entree-1800.jpg">
+              <img
+                src="impressies/entree-900.jpg"
+                srcset="impressies/entree-900.jpg 900w, impressies/entree-1800.jpg 1800w"
+                sizes="(max-width: 760px) 84vw, 38vw"
+                width="1800"
+                height="1252"
+                loading="lazy"
+                decoding="async"
+                alt="Brass KΛIN sign on the brick wall beside the entrance"
+              />
+            </button>
+          </figure>
+          <figure class="impression impression--menu" data-speed="0.08">
+            <button class="impression-open" type="button" data-full="impressies/menukaart-1800.jpg">
+              <img
+                src="impressies/menukaart-900.jpg"
+                srcset="impressies/menukaart-900.jpg 900w, impressies/menukaart-1800.jpg 1800w"
+                sizes="(max-width: 760px) 44vw, 22vw"
+                width="1800"
+                height="1200"
+                loading="lazy"
+                decoding="async"
+                alt="The menu sealed with an amber ginkgo wax seal, between two wine glasses"
+              />
+            </button>
+          </figure>
+          <figure class="impression impression--dish" data-speed="-0.05">
+            <button class="impression-open" type="button" data-full="impressies/gerecht-1800.jpg">
+              <img
+                src="impressies/gerecht-900.jpg"
+                srcset="impressies/gerecht-900.jpg 900w, impressies/gerecht-1800.jpg 1800w"
+                sizes="(max-width: 760px) 44vw, 28vw"
+                width="1800"
+                height="1263"
+                loading="lazy"
+                decoding="async"
+                alt="Two golden fried dishes served on wooden trays with broth and matcha-dusted mochi"
+              />
+            </button>
+          </figure>
+          <figure class="impression impression--jars" data-speed="0.1">
+            <button class="impression-open" type="button" data-full="impressies/potjes-1800.jpg">
+              <img
+                src="impressies/potjes-900.jpg"
+                srcset="impressies/potjes-900.jpg 900w, impressies/potjes-1800.jpg 1800w"
+                sizes="(max-width: 760px) 38vw, 18vw"
+                width="1800"
+                height="1430"
+                loading="lazy"
+                decoding="async"
+                alt="Cut-glass jars of peppercorns on a wooden tray"
+              />
+            </button>
+          </figure>
+          <figure class="impression impression--bite" data-speed="-0.07">
+            <button class="impression-open" type="button" data-full="impressies/hapje-1800.jpg">
+              <img
+                src="impressies/hapje-900.jpg"
+                srcset="impressies/hapje-900.jpg 900w, impressies/hapje-1800.jpg 1800w"
+                sizes="(max-width: 760px) 78vw, 33vw"
+                width="1800"
+                height="1303"
+                loading="lazy"
+                decoding="async"
+                alt="A hand lifting a crisp bite topped with langoustine and fresh herbs"
+              />
+            </button>
+          </figure>
+          <figure class="impression impression--table" data-speed="0.06">
+            <button class="impression-open" type="button" data-full="impressies/tafel-1800.jpg">
+              <img
+                src="impressies/tafel-900.jpg"
+                srcset="impressies/tafel-900.jpg 900w, impressies/tafel-1800.jpg 1800w"
+                sizes="(max-width: 760px) 50vw, 25vw"
+                width="1800"
+                height="1200"
+                loading="lazy"
+                decoding="async"
+                alt="A table set with sparkling wine, the menu and a guest's hand on a glass"
+              />
+            </button>
+          </figure>
+          <figure class="impression impression--lechon" data-speed="-0.08">
+            <button class="impression-open" type="button" data-full="impressies/lechon-1800.jpg">
+              <img
+                src="impressies/lechon-900.jpg"
+                srcset="impressies/lechon-900.jpg 900w, impressies/lechon-1800.jpg 1800w"
+                sizes="(max-width: 760px) 88vw, 36vw"
+                width="1800"
+                height="1297"
+                loading="lazy"
+                decoding="async"
+                alt="Lechon: crisp rolled pork belly with a quenelle of foie and a violet flower"
+              />
+            </button>
+          </figure>
+          <figure class="impression impression--wine" data-speed="0.05">
+            <button class="impression-open" type="button" data-full="impressies/wijn-1800.jpg">
+              <img
+                src="impressies/wijn-900.jpg"
+                srcset="impressies/wijn-900.jpg 900w, impressies/wijn-1800.jpg 1800w"
+                sizes="(max-width: 760px) 64vw, 27vw"
+                width="1800"
+                height="1200"
+                loading="lazy"
+                decoding="async"
+                alt="White wine being poured at the table"
+              />
+            </button>
+          </figure>
+        </div>
+      </section>
+
       <section class="home" aria-label="KΛIN home">
         <div class="home-image" aria-hidden="true"></div>
         <nav class="home-nav" aria-label="KΛIN sections">
@@ -180,6 +298,11 @@
         </div>
       </section>
 
+      <dialog class="impression-lightbox" aria-label="Impression">
+        <button class="impression-close" type="button" aria-label="Close">&times;</button>
+        <img alt="" />
+      </dialog>
+
       <section class="reservations" id="reservations">
         <div class="reservation-prices" aria-label="Prices">
           <h3 class="label" data-i18n="pricing.label">Pricing</h3>
@@ -252,13 +375,16 @@
           </address>
         </div>
         <p class="contact-note" data-i18n="contact.note">
-          For general enquiries, please send us an email.
+          For general enquiries or private bookings, please send us an email.
         </p>
       </section>
     </main>
 
     <script>
       document.documentElement.classList.add('js-ready');
+      if ('scrollRestoration' in window.history) {
+        window.history.scrollRestoration = 'manual';
+      }
 
       const translations = {
         en: {
@@ -292,6 +418,7 @@
           'pricing.label': 'Pricing',
           'pricing.details': '<span>Menu €132</span><span>Wine pairing €78</span><span>Non-alcoholic pairing €68</span>',
           'reservations.module': 'Reservations',
+          'impressions.label': 'Impressions',
           'reservations.widget': 'Reserve your seat',
           'reservations.policy': 'We ask for a €20 deposit per guest to hold your seat. Cancellations made less than 24 hours before your visit are no longer refundable.',
           'reservations.information': 'Dietary',
@@ -307,7 +434,7 @@
           'contact.openingThree': 'Friday',
           'contact.openingFour': 'Saturday',
           'contact.openingTimes': 'Dinner from 18:00',
-          'contact.note': 'For general enquiries, please send us an email.'
+          'contact.note': 'For general enquiries or private bookings, please send us an email.'
         },
         nl: {
           'nav.story': 'Ons verhaal',
@@ -340,6 +467,7 @@
           'pricing.label': 'Prijzen',
           'pricing.details': '<span>Menu €132</span><span>Wijnarrangement €78</span><span>Alcoholvrij arrangement €68</span>',
           'reservations.module': 'Reserveringen',
+          'impressions.label': 'Impressies',
           'reservations.widget': 'Reserveer uw tafel',
           'reservations.policy': 'We vragen een aanbetaling van €20 per gast om uw tafel vast te houden. Annuleringen minder dan 24 uur voor uw bezoek worden niet meer terugbetaald.',
           'reservations.information': 'Dieetwensen',
@@ -355,7 +483,7 @@
           'contact.openingThree': 'Vrijdag',
           'contact.openingFour': 'Zaterdag',
           'contact.openingTimes': 'Diner vanaf 18:00',
-          'contact.note': 'Voor algemene vragen kunt u ons altijd een e-mail sturen.'
+          'contact.note': 'Voor algemene vragen of besloten boekingen kunt u ons altijd een e-mail sturen.'
         }
       };
 
@@ -461,9 +589,10 @@
         }
         document.body.classList.remove('is-opening');
         document.body.classList.add('is-entering');
-        if (resetToHome) {
+        if (resetToHome || !window.location.hash) {
           window.scrollTo({ top: 0, behavior: 'auto' });
         }
+        document.dispatchEvent(new Event('kain:entered'));
         window.setTimeout(() => {
           document.body.classList.remove('is-entering');
           document.body.classList.add('opening-done');
@@ -481,6 +610,83 @@
       }
 
       window.setTimeout(() => revealSite(false), 10000);
+
+      const lightbox = document.querySelector('.impression-lightbox');
+      const lightboxImage = lightbox ? lightbox.querySelector('img') : null;
+      document.querySelectorAll('.impression-open').forEach((button) => {
+        button.addEventListener('click', () => {
+          if (!lightbox || typeof lightbox.showModal !== 'function') {
+            return;
+          }
+          const image = button.querySelector('img');
+          lightboxImage.src = button.dataset.full;
+          lightboxImage.alt = image ? image.alt : '';
+          lightbox.showModal();
+        });
+      });
+      if (lightbox) {
+        lightbox.addEventListener('click', () => lightbox.close());
+      }
+
+      const impressions = document.querySelector('.impressions');
+      const floating = document.querySelectorAll('.impression[data-speed]');
+      if (impressions) {
+        const impressionObserver = new IntersectionObserver(
+          (entries) => {
+            if (document.body.classList.contains('is-opening')) {
+              return;
+            }
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+              }
+            });
+          },
+          { threshold: 0.2, rootMargin: '0px 0px -8% 0px' }
+        );
+        document.addEventListener('kain:entered', () => {
+          impressions.classList.add('is-visible');
+          let order = 0;
+          floating.forEach((figure) => {
+            const box = figure.getBoundingClientRect();
+            if (box.top < window.innerHeight * 0.92 && box.bottom > 0) {
+              figure.style.setProperty('--reveal-delay', `${600 + order * 260}ms`);
+              order += 1;
+              figure.classList.add('is-visible');
+            } else {
+              impressionObserver.unobserve(figure);
+              impressionObserver.observe(figure);
+            }
+          });
+        });
+        impressionObserver.observe(impressions);
+        floating.forEach((figure) => impressionObserver.observe(figure));
+
+        const calmMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        let parallaxFrame = null;
+        const updateParallax = () => {
+          parallaxFrame = null;
+          const viewportMiddle = window.innerHeight / 2;
+          const strength = window.innerWidth <= 760 ? 0.55 : 1;
+          floating.forEach((figure) => {
+            const box = figure.getBoundingClientRect();
+            if (box.bottom < -400 || box.top > window.innerHeight + 400) {
+              return;
+            }
+            const offset = (box.top + box.height / 2 - viewportMiddle) * Number(figure.dataset.speed) * strength;
+            figure.style.setProperty('--drift', `${offset.toFixed(1)}px`);
+          });
+        };
+        const requestParallax = () => {
+          if (calmMotion.matches || parallaxFrame) {
+            return;
+          }
+          parallaxFrame = window.requestAnimationFrame(updateParallax);
+        };
+        window.addEventListener('scroll', requestParallax, { passive: true });
+        window.addEventListener('resize', requestParallax);
+        requestParallax();
+      }
 
       const sections = document.querySelectorAll(
         '.home, .story, .menu, .reservations, .contact'
