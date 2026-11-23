@@ -39,7 +39,7 @@
     <link rel="icon" type="image/svg+xml" href="/kain-favicon.svg?v=5" />
     <link rel="icon" type="image/png" href="/kain-favicon.png?v=3" />
     <link rel="apple-touch-icon" href="/kain-favicon.png?v=3" />
-    <link rel="stylesheet" href="styles.css?v=27" />
+    <link rel="stylesheet" href="styles.css?v=56" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -234,6 +234,7 @@
             <button type="button" data-language-toggle-menu>Nederlands</button>
           </div>
           <a class="nav-reservations" href="#reservations" data-i18n="nav.reservations">Reservations</a>
+          <a class="nav-christmas" href="#christmas" data-i18n="nav.christmas">Christmas</a>
           <a class="nav-contact" href="#contact" data-i18n="nav.contact">Contact</a>
         </nav>
       </section>
@@ -298,6 +299,18 @@
         </div>
       </section>
 
+      <section class="christmas" id="christmas" aria-labelledby="christmas-label">
+        <div class="christmas-lights" aria-hidden="true"></div>
+        <div class="christmas-menu">
+          <h2 class="christmas-title" id="christmas-label" data-i18n="christmas.label">Christmas at KΛIN</h2>
+          <p class="christmas-line" data-i18n="christmas.tagline">A holiday tasting menu</p>
+          <p class="christmas-line" data-i18n="christmas.dates">24, 25, 26 &amp; 31 December</p>
+          <p class="christmas-line" data-i18n="christmas.courses">8 courses</p>
+          <p class="christmas-line christmas-small" data-i18n="christmas.petitFours">plus petit fours</p>
+          <p class="christmas-line christmas-amount" data-i18n="christmas.price">€142</p>
+        </div>
+      </section>
+
       <dialog class="impression-lightbox" aria-label="Impression">
         <button class="impression-close" type="button" aria-label="Close">&times;</button>
         <img alt="" />
@@ -307,7 +320,8 @@
         <div class="reservation-prices" aria-label="Prices">
           <h3 class="label" data-i18n="pricing.label">Pricing</h3>
           <div class="pricing-lines" data-i18n="pricing.details">
-            <span>Menu €132</span>
+            <span>Pamana menu €132</span>
+            <span>Christmas menu €142</span>
             <span>Wine pairing €78</span>
             <span>Non-alcoholic pairing €68</span>
           </div>
@@ -392,6 +406,7 @@
         en: {
           'nav.story': 'Our Story',
           'nav.menu': 'Menu',
+          'nav.christmas': 'Christmas',
           'nav.contact': 'Contact',
           'nav.reservations': 'Reservations',
           'story.label': 'Our story',
@@ -417,8 +432,14 @@
           'menu.12': 'Halo-Halo<span class="menu-item-ingredients">ube, buttermilk, seasonal flavors</span>',
           'menu.13': 'Auro, Kalamansi<span class="menu-item-ingredients">dark chocolate, black beer, kalamansi</span>',
           'menu.14': 'Petit fours',
+          'christmas.label': 'Christmas at KΛIN',
+          'christmas.tagline': 'A holiday tasting menu',
+          'christmas.dates': '24, 25, 26 &amp; 31 December',
+          'christmas.courses': '8 courses',
+          'christmas.petitFours': 'plus petit fours',
+          'christmas.price': '€142',
           'pricing.label': 'Pricing',
-          'pricing.details': '<span>Menu €132</span><span>Wine pairing €78</span><span>Non-alcoholic pairing €68</span>',
+          'pricing.details': '<span>Pamana menu €132</span><span>Christmas menu €142</span><span>Wine pairing €78</span><span>Non-alcoholic pairing €68</span>',
           'reservations.module': 'Reservations',
           'impressions.label': 'Impressions',
           'reservations.widget': 'Reserve your seat',
@@ -441,6 +462,7 @@
         nl: {
           'nav.story': 'Ons verhaal',
           'nav.menu': 'Menu',
+          'nav.christmas': 'Kerst',
           'nav.contact': 'Contact',
           'nav.reservations': 'Reserveren',
           'story.label': 'Ons verhaal',
@@ -466,8 +488,14 @@
           'menu.12': 'Halo-Halo<span class="menu-item-ingredients">ube, karnemelk, seizoen smaken</span>',
           'menu.13': 'Auro, Kalamansi<span class="menu-item-ingredients">pure chocolade, zwart bier, kalamansi</span>',
           'menu.14': 'Petit fours',
+          'christmas.label': 'Kerst bij KΛIN',
+          'christmas.tagline': 'Een feestelijk tastingmenu',
+          'christmas.dates': '24, 25, 26 &amp; 31 december',
+          'christmas.courses': '8 gangen',
+          'christmas.petitFours': 'plus petit fours',
+          'christmas.price': '€142',
           'pricing.label': 'Prijzen',
-          'pricing.details': '<span>Menu €132</span><span>Wijnarrangement €78</span><span>Alcoholvrij arrangement €68</span>',
+          'pricing.details': '<span>Menu Pamana €132</span><span>Kerstmenu €142</span><span>Wijnarrangement €78</span><span>Alcoholvrij arrangement €68</span>',
           'reservations.module': 'Reserveringen',
           'impressions.label': 'Impressies',
           'reservations.widget': 'Reserveer uw tafel',
@@ -733,8 +761,34 @@
         requestParallax();
       }
 
+      const christmasLights = document.querySelector('.christmas-lights');
+      if (christmasLights) {
+        let seed = 20261224;
+        const random = () => {
+          seed = (seed * 1664525 + 1013904223) % 4294967296;
+          return seed / 4294967296;
+        };
+        const lightCount = window.innerWidth <= 760 ? 60 : 120;
+        for (let index = 0; index < lightCount; index += 1) {
+          const light = document.createElement('i');
+          const isBokeh = index % 5 === 0;
+          const size = isBokeh ? 26 + random() * 54 : 2 + random() * 4;
+          light.className = isBokeh ? 'is-bokeh' : '';
+          light.style.cssText = [
+            `--x: ${(random() * 100).toFixed(2)}%`,
+            `--y: ${(random() * 100).toFixed(2)}%`,
+            `--s: ${size.toFixed(1)}px`,
+            `--lo: ${(isBokeh ? 0.06 + random() * 0.08 : 0.12 + random() * 0.2).toFixed(2)}`,
+            `--hi: ${(isBokeh ? 0.22 + random() * 0.2 : 0.7 + random() * 0.3).toFixed(2)}`,
+            `--d: ${(isBokeh ? 5 + random() * 5 : 1.8 + random() * 3.2).toFixed(2)}s`,
+            `--t: ${(-random() * 8).toFixed(2)}s`,
+          ].join('; ');
+          christmasLights.appendChild(light);
+        }
+      }
+
       const sections = document.querySelectorAll(
-        '.home, .story, .menu, .reservations, .contact'
+        '.home, .story, .menu, .christmas, .reservations, .contact'
       );
       let currentSection = null;
       let sectionChangeTimer;

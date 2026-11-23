@@ -509,6 +509,13 @@ body.is-opening .home-nav {
   top: auto;
 }
 
+.home-nav .nav-christmas {
+  left: 50%;
+  bottom: 0;
+  top: auto;
+  transform: translateX(-50%);
+}
+
 .home-nav .nav-contact {
   right: 0;
   bottom: 0;
@@ -573,6 +580,7 @@ body.is-opening .home-nav {
 .story,
 .menu,
 .impressions,
+.christmas,
 .reservations,
 .contact {
   position: relative;
@@ -582,6 +590,7 @@ body.is-opening .home-nav {
 .story::before,
 .menu::before,
 .impressions::before,
+.christmas::before,
 .reservations::before,
 .contact::before {
   content: '';
@@ -597,6 +606,7 @@ body.is-opening .home-nav {
 .story::after,
 .menu::after,
 .impressions::after,
+.christmas::after,
 .reservations::after,
 .contact::after {
   content: '';
@@ -611,6 +621,7 @@ body.is-opening .home-nav {
 .story::before,
 .menu::before,
 .impressions::before,
+.christmas::before,
 .reservations::before,
 .contact::before {
   transform: scale(1.025);
@@ -620,6 +631,7 @@ body.is-opening .home-nav {
 .story.is-visible::before,
 .menu.is-visible::before,
 .impressions.is-visible::before,
+.christmas.is-visible::before,
 .reservations.is-visible::before,
 .contact.is-visible::before {
   transform: scale(1);
@@ -1116,6 +1128,162 @@ body.tebi-ready:not(.tebi-open) .reserve-float {
   }
 }
 
+.christmas {
+  width: 100%;
+  min-height: 100svh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.christmas-lights {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.christmas-lights::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 34% 26% at 50% 50%, rgba(18, 12, 8, 0.55), transparent 100%);
+}
+
+.christmas-lights i {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--s);
+  height: var(--s);
+  margin: calc(var(--s) / -2) 0 0 calc(var(--s) / -2);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 240, 210, 1) 0, rgba(246, 204, 140, 0.7) 38%, transparent 70%);
+  box-shadow: 0 0 calc(var(--s) * 3) rgba(255, 206, 136, 0.55);
+  opacity: var(--lo);
+  animation: christmasTwinkle var(--d) ease-in-out var(--t) infinite alternate;
+  animation-play-state: paused;
+}
+
+.christmas-lights i.is-bokeh {
+  background: radial-gradient(circle, rgba(255, 226, 172, 0.9) 0, rgba(232, 182, 112, 0.5) 46%, transparent 72%);
+  box-shadow: none;
+  filter: blur(3px);
+}
+
+.christmas.is-visible .christmas-lights i {
+  animation-play-state: running;
+}
+
+@keyframes christmasTwinkle {
+  from {
+    opacity: var(--lo);
+    transform: scale(0.82);
+  }
+
+  to {
+    opacity: var(--hi);
+    transform: scale(1);
+  }
+}
+
+.christmas-menu {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  padding: clamp(56px, 8svh, 110px) clamp(24px, 6vw, 96px);
+  text-align: center;
+}
+
+.christmas-menu > * {
+  text-shadow: 0 0 18px rgba(18, 12, 8, 0.95), 0 0 4px rgba(18, 12, 8, 0.8);
+}
+
+.christmas-title {
+  margin: 0 0 clamp(42px, 6svh, 66px);
+  padding-left: 0.4em;
+  color: rgba(240, 223, 196, 0.78);
+  font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+  font-weight: 300;
+  letter-spacing: 0.4em;
+  line-height: 2.3;
+  text-transform: uppercase;
+}
+
+.christmas-line {
+  margin: 0;
+  padding-left: 0.4em;
+  color: rgba(240, 223, 196, 0.78);
+  font-size: clamp(0.66rem, 0.9vw, 0.78rem);
+  font-weight: 300;
+  letter-spacing: 0.4em;
+  line-height: 3.6;
+  text-transform: uppercase;
+}
+
+.christmas-small {
+  font-size: clamp(0.58rem, 0.78vw, 0.68rem);
+  text-transform: none;
+}
+
+.christmas-amount {
+  margin-top: clamp(14px, 2svh, 22px);
+  font-weight: 200;
+}
+
+.js-ready .christmas-lights {
+  opacity: 0;
+  transition: opacity 2400ms ease;
+}
+
+.js-ready .christmas.is-visible .christmas-lights {
+  opacity: 1;
+}
+
+.js-ready .christmas-menu > * {
+  opacity: 0;
+  filter: blur(8px);
+  transform: translateY(16px);
+}
+
+.js-ready .christmas.is-visible .christmas-menu > * {
+  opacity: 1;
+  filter: blur(0);
+  transform: none;
+  transition:
+    opacity 1400ms ease,
+    filter 1400ms ease,
+    transform 1600ms cubic-bezier(0.22, 0.02, 0.16, 1);
+}
+
+.js-ready .christmas.is-visible .christmas-menu > :nth-child(1) {
+  transition-delay: 300ms;
+}
+
+.js-ready .christmas.is-visible .christmas-menu > :nth-child(2) {
+  transition-delay: 520ms;
+}
+
+.js-ready .christmas.is-visible .christmas-menu > :nth-child(3) {
+  transition-delay: 680ms;
+}
+
+.js-ready .christmas.is-visible .christmas-menu > :nth-child(4) {
+  transition-delay: 840ms;
+}
+
+.js-ready .christmas.is-visible .christmas-menu > :nth-child(5) {
+  transition-delay: 1000ms;
+}
+
+.js-ready .christmas.is-visible .christmas-menu > :nth-child(6) {
+  transition-delay: 1200ms;
+}
+
 .reservations {
   width: min(100% - 48px, 620px);
   min-height: 112svh;
@@ -1584,7 +1752,7 @@ body.tebi-ready:not(.tebi-open) .reserve-float {
     position: absolute;
     z-index: 4;
     left: 50%;
-    top: 194px;
+    top: 226px;
     display: grid;
     width: min(54vw, 192px);
     min-height: 28px;
@@ -1644,8 +1812,12 @@ body.tebi-ready:not(.tebi-open) .reserve-float {
     top: 130px;
   }
 
-  .home-nav.is-open .nav-contact {
+  .home-nav.is-open .nav-christmas {
     top: 162px;
+  }
+
+  .home-nav.is-open .nav-contact {
+    top: 194px;
   }
 
   .home-nav.is-open {
@@ -1658,7 +1830,7 @@ body.tebi-ready:not(.tebi-open) .reserve-float {
     left: 50%;
     top: 34px;
     width: min(86vw, 340px);
-    height: 238px;
+    height: 270px;
     background:
       radial-gradient(ellipse at 50% 8%, rgba(38, 24, 16, 0.46), transparent 72%),
       linear-gradient(180deg, rgba(47, 30, 20, 0.26), rgba(47, 30, 20, 0));
@@ -1800,6 +1972,17 @@ body.tebi-ready:not(.tebi-open) .reserve-float {
     margin-bottom: 32px;
   }
 
+  .christmas-title {
+    font-size: 1rem;
+    letter-spacing: 0.3em;
+    padding-left: 0.3em;
+  }
+
+  .christmas-line {
+    letter-spacing: 0.3em;
+    padding-left: 0.3em;
+  }
+
   .menu-heading .wordmark {
     font-size: 0.9rem;
     letter-spacing: 0.58em;
@@ -1897,6 +2080,8 @@ body.tebi-ready:not(.tebi-open) .reserve-float {
 
   .js-ready .home-nav a,
   .impression-open,
+  .js-ready .christmas-lights,
+  .js-ready .christmas-menu > *,
   .js-ready .story > *,
   .js-ready .menu > *,
   .js-ready .reservations > *,
@@ -1906,7 +2091,8 @@ body.tebi-ready:not(.tebi-open) .reserve-float {
     filter: none;
   }
 
-  .js-ready .home-nav .nav-menu {
+  .js-ready .home-nav .nav-menu,
+  .js-ready .home-nav .nav-christmas {
     transform: translateX(-50%);
   }
 }
